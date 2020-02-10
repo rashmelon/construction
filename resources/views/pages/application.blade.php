@@ -7,7 +7,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     {{--<!-- <link rel="icon" href="<%= BASE_URL %>favicon.ico"> -->--}}
 
-    <title>Laravel Vuex Starter Pack</title>
+    <title>Construction</title>
     <!-- Styles -->
     <link rel="stylesheet" href="{{ asset(mix('css/main.css')) }}">
     <link rel="stylesheet" href="{{ asset(mix('css/iconfont.css')) }}">

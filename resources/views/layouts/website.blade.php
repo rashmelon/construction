@@ -9,7 +9,7 @@
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>@yield('title') {{ config('app.name', 'Pack\'N Go') }}</title>
+        <title>@yield('title') {{ config('app.name', 'Constructiuon') }}</title>
         <!-- favicon -->
         <link rel=icon href="../../assets/images/website/favicon.png" sizes="20x20" type="image/png">
 

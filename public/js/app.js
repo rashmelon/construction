@@ -71235,6 +71235,17 @@ module.exports = "/images/avatar-s-11.jpg?1a620230b75dd161d37ad2d21948e9cb";
 
 /***/ }),
 
+/***/ "./resources/assets/images/portrait/small/images.png":
+/*!***********************************************************!*\
+  !*** ./resources/assets/images/portrait/small/images.png ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/images.png?97ebfcb05b3e77a3f59d80d24ac778ee";
+
+/***/ }),
+
 /***/ "./resources/assets/utils/color.js":
 /*!*****************************************!*\
   !*** ./resources/assets/utils/color.js ***!
@@ -72113,6 +72124,38 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/src/http/requests/apartment/index.js":
+/*!***********************************************************!*\
+  !*** ./resources/js/src/http/requests/apartment/index.js ***!
+  \***********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _axios_index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../axios/index.js */ "./resources/js/src/http/axios/index.js");
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  getAll: function getAll(filters) {
+    //filters=?paginate=5&sortAsc=id
+    return _axios_index_js__WEBPACK_IMPORTED_MODULE_0__["default"].get("apartment".concat(filters));
+  },
+  view: function view(id) {
+    return _axios_index_js__WEBPACK_IMPORTED_MODULE_0__["default"].get("apartment/".concat(id));
+  },
+  create: function create(data) {
+    return _axios_index_js__WEBPACK_IMPORTED_MODULE_0__["default"].post("apartment", data);
+  },
+  update: function update(id, data) {
+    return _axios_index_js__WEBPACK_IMPORTED_MODULE_0__["default"].put("apartment/".concat(id), data);
+  },
+  delete: function _delete(id) {
+    return _axios_index_js__WEBPACK_IMPORTED_MODULE_0__["default"].delete("apartment/".concat(id));
+  }
+});
+
+/***/ }),
+
 /***/ "./resources/js/src/http/requests/auth/jwt/index.js":
 /*!**********************************************************!*\
   !*** ./resources/js/src/http/requests/auth/jwt/index.js ***!
@@ -72193,6 +72236,70 @@ function addSubscriber(callback) {
 
 /***/ }),
 
+/***/ "./resources/js/src/http/requests/customer/index.js":
+/*!**********************************************************!*\
+  !*** ./resources/js/src/http/requests/customer/index.js ***!
+  \**********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _axios_index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../axios/index.js */ "./resources/js/src/http/axios/index.js");
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  getAll: function getAll(filters) {
+    //filters=?paginate=5&sortAsc=id
+    return _axios_index_js__WEBPACK_IMPORTED_MODULE_0__["default"].get("customer".concat(filters));
+  },
+  view: function view(id) {
+    return _axios_index_js__WEBPACK_IMPORTED_MODULE_0__["default"].get("customer/".concat(id));
+  },
+  create: function create(data) {
+    return _axios_index_js__WEBPACK_IMPORTED_MODULE_0__["default"].post("customer", data);
+  },
+  update: function update(id, data) {
+    return _axios_index_js__WEBPACK_IMPORTED_MODULE_0__["default"].put("customer/".concat(id), data);
+  },
+  delete: function _delete(id) {
+    return _axios_index_js__WEBPACK_IMPORTED_MODULE_0__["default"].delete("customer/".concat(id));
+  }
+});
+
+/***/ }),
+
+/***/ "./resources/js/src/http/requests/follow-up/index.js":
+/*!***********************************************************!*\
+  !*** ./resources/js/src/http/requests/follow-up/index.js ***!
+  \***********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _axios_index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../axios/index.js */ "./resources/js/src/http/axios/index.js");
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  getAll: function getAll(filters) {
+    //filters=?paginate=5&sortAsc=id
+    return _axios_index_js__WEBPACK_IMPORTED_MODULE_0__["default"].get("follow-up".concat(filters));
+  },
+  view: function view(id) {
+    return _axios_index_js__WEBPACK_IMPORTED_MODULE_0__["default"].get("follow-up/".concat(id));
+  },
+  create: function create(data) {
+    return _axios_index_js__WEBPACK_IMPORTED_MODULE_0__["default"].post("follow-up", data);
+  },
+  update: function update(id, data) {
+    return _axios_index_js__WEBPACK_IMPORTED_MODULE_0__["default"].put("follow-up/".concat(id), data);
+  },
+  delete: function _delete(id) {
+    return _axios_index_js__WEBPACK_IMPORTED_MODULE_0__["default"].delete("follow-up/".concat(id));
+  }
+});
+
+/***/ }),
+
 /***/ "./resources/js/src/http/requests/permission/index.js":
 /*!************************************************************!*\
   !*** ./resources/js/src/http/requests/permission/index.js ***!
@@ -72207,6 +72314,73 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   getAll: function getAll() {
     return _axios_index_js__WEBPACK_IMPORTED_MODULE_0__["default"].get("permission");
+  }
+});
+
+/***/ }),
+
+/***/ "./resources/js/src/http/requests/project/index.js":
+/*!*********************************************************!*\
+  !*** ./resources/js/src/http/requests/project/index.js ***!
+  \*********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _axios_index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../axios/index.js */ "./resources/js/src/http/axios/index.js");
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  getAll: function getAll(filters) {
+    //filters=?paginate=5&sortAsc=id
+    return _axios_index_js__WEBPACK_IMPORTED_MODULE_0__["default"].get("project".concat(filters));
+  },
+  view: function view(id) {
+    return _axios_index_js__WEBPACK_IMPORTED_MODULE_0__["default"].get("project/".concat(id));
+  },
+  create: function create(data) {
+    return _axios_index_js__WEBPACK_IMPORTED_MODULE_0__["default"].post("project", data);
+  },
+  update: function update(id, data) {
+    return _axios_index_js__WEBPACK_IMPORTED_MODULE_0__["default"].post("project/".concat(id), data);
+  },
+  delete: function _delete(id) {
+    return _axios_index_js__WEBPACK_IMPORTED_MODULE_0__["default"].delete("project/".concat(id));
+  }
+});
+
+/***/ }),
+
+/***/ "./resources/js/src/http/requests/purchase/index.js":
+/*!**********************************************************!*\
+  !*** ./resources/js/src/http/requests/purchase/index.js ***!
+  \**********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _axios_index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../axios/index.js */ "./resources/js/src/http/axios/index.js");
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  getAll: function getAll(filters) {
+    //filters=?paginate=5&sortAsc=id
+    return _axios_index_js__WEBPACK_IMPORTED_MODULE_0__["default"].get("purchase".concat(filters));
+  },
+  getCreate: function getCreate() {
+    return _axios_index_js__WEBPACK_IMPORTED_MODULE_0__["default"].get("purchase/create");
+  },
+  view: function view(id) {
+    return _axios_index_js__WEBPACK_IMPORTED_MODULE_0__["default"].get("purchase/".concat(id));
+  },
+  create: function create(data) {
+    return _axios_index_js__WEBPACK_IMPORTED_MODULE_0__["default"].post("purchase", data);
+  },
+  update: function update(id, data) {
+    return _axios_index_js__WEBPACK_IMPORTED_MODULE_0__["default"].patch("purchase/".concat(id), data);
+  },
+  delete: function _delete(id) {
+    return _axios_index_js__WEBPACK_IMPORTED_MODULE_0__["default"].delete("purchase/".concat(id));
   }
 });
 
@@ -72631,6 +72805,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _store_store__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../store/store */ "./resources/js/src/store/store.js");
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  'name': 'authCan',
   methods: {
     /**
      * Check if the authenticated user can perform an action.
@@ -72686,7 +72861,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
     // =============================================================================
     path: '',
     component: function component() {
-      return Promise.all(/*! import() */[__webpack_require__.e(2), __webpack_require__.e(0)]).then(__webpack_require__.bind(null, /*! ./layouts/main/Main.vue */ "./resources/js/src/layouts/main/Main.vue"));
+      return Promise.all(/*! import() */[__webpack_require__.e(5), __webpack_require__.e(4)]).then(__webpack_require__.bind(null, /*! ./layouts/main/Main.vue */ "./resources/js/src/layouts/main/Main.vue"));
     },
     children: [// =============================================================================
     // Theme Routes
@@ -72696,7 +72871,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
       name: 'home',
       beforeEnter: guard,
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 16).then(__webpack_require__.bind(null, /*! ./views/Home.vue */ "./resources/js/src/views/Home.vue"));
+        return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(1), __webpack_require__.e(31)]).then(__webpack_require__.bind(null, /*! ./views/Home.vue */ "./resources/js/src/views/Home.vue"));
       },
       meta: {
         breadcrumb: [{
@@ -72712,7 +72887,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
       path: '/dashboard/user',
       name: 'user',
       component: function component() {
-        return Promise.all(/*! import() */[__webpack_require__.e(1), __webpack_require__.e(6)]).then(__webpack_require__.bind(null, /*! ./views/user/browse.vue */ "./resources/js/src/views/user/browse.vue"));
+        return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(26)]).then(__webpack_require__.bind(null, /*! ./views/user/browse.vue */ "./resources/js/src/views/user/browse.vue"));
       },
       beforeEnter: guard,
       meta: {
@@ -72733,7 +72908,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
       path: '/dashboard/user/create',
       name: 'add-user',
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 7).then(__webpack_require__.bind(null, /*! ./views/user/create.vue */ "./resources/js/src/views/user/create.vue"));
+        return __webpack_require__.e(/*! import() */ 27).then(__webpack_require__.bind(null, /*! ./views/user/create.vue */ "./resources/js/src/views/user/create.vue"));
       },
       beforeEnter: guard,
       meta: {
@@ -72758,7 +72933,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
       path: '/dashboard/user/:id',
       name: 'view-user',
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 9).then(__webpack_require__.bind(null, /*! ./views/user/view.vue */ "./resources/js/src/views/user/view.vue"));
+        return __webpack_require__.e(/*! import() */ 29).then(__webpack_require__.bind(null, /*! ./views/user/view.vue */ "./resources/js/src/views/user/view.vue"));
       },
       beforeEnter: guard,
       meta: {
@@ -72783,7 +72958,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
       path: '/dashboard/user/:id/edit',
       name: 'edit-user',
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 8).then(__webpack_require__.bind(null, /*! ./views/user/edit.vue */ "./resources/js/src/views/user/edit.vue"));
+        return __webpack_require__.e(/*! import() */ 28).then(__webpack_require__.bind(null, /*! ./views/user/edit.vue */ "./resources/js/src/views/user/edit.vue"));
       },
       beforeEnter: guard,
       meta: {
@@ -72805,10 +72980,494 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
         permission: 'edit-user'
       }
     }, {
+      path: '/dashboard/project',
+      name: 'project',
+      component: function component() {
+        return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(17)]).then(__webpack_require__.bind(null, /*! ./views/project/browse.vue */ "./resources/js/src/views/project/browse.vue"));
+      },
+      beforeEnter: guard,
+      meta: {
+        breadcrumb: [{
+          title: 'Home',
+          url: '/dashboard',
+          i18n: 'Home'
+        }, {
+          title: 'Project',
+          active: true,
+          i18n: 'Project'
+        }],
+        pageTitle: 'Project',
+        pageTitle_i18n: 'Project',
+        permission: 'browse-project'
+      }
+    }, {
+      path: '/dashboard/project/create',
+      name: 'add-project',
+      component: function component() {
+        return __webpack_require__.e(/*! import() */ 18).then(__webpack_require__.bind(null, /*! ./views/project/create.vue */ "./resources/js/src/views/project/create.vue"));
+      },
+      beforeEnter: guard,
+      meta: {
+        breadcrumb: [{
+          title: 'Home',
+          url: '/dashboard',
+          i18n: 'Home'
+        }, {
+          title: 'Project',
+          url: '/dashboard/project',
+          i18n: 'Project'
+        }, {
+          title: 'Add Project',
+          active: true,
+          i18n: 'AddProject'
+        }],
+        pageTitle: 'Add Project',
+        pageTitle_i18n: 'AddProject',
+        permission: 'create-project'
+      }
+    }, {
+      path: '/dashboard/project/:id',
+      name: 'view-project',
+      component: function component() {
+        return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(3), __webpack_require__.e(20)]).then(__webpack_require__.bind(null, /*! ./views/project/view.vue */ "./resources/js/src/views/project/view.vue"));
+      },
+      beforeEnter: guard,
+      meta: {
+        breadcrumb: [{
+          title: 'Home',
+          url: '/dashboard',
+          i18n: 'Home'
+        }, {
+          title: 'Project',
+          url: '/dashboard/project',
+          i18n: 'Project'
+        }, {
+          title: 'View Project',
+          url: '/dashboard/project/:id',
+          active: true,
+          i18n: 'ViewProject'
+        }],
+        pageTitle: 'View Project',
+        pageTitle_i18n: 'viewProject',
+        permission: 'view-project'
+      }
+    }, {
+      path: '/dashboard/project/:id/edit',
+      name: 'edit-project',
+      component: function component() {
+        return __webpack_require__.e(/*! import() */ 19).then(__webpack_require__.bind(null, /*! ./views/project/edit.vue */ "./resources/js/src/views/project/edit.vue"));
+      },
+      beforeEnter: guard,
+      meta: {
+        breadcrumb: [{
+          title: 'Home',
+          url: '/dashboard',
+          i18n: 'Home'
+        }, {
+          title: 'Project',
+          url: '/dashboard/project',
+          i18n: 'Project'
+        }, {
+          title: 'Edit Project',
+          active: true,
+          i18n: 'editProject'
+        }],
+        pageTitle: 'Edit Project',
+        pageTitle_i18n: 'editProject',
+        permission: 'edit-project'
+      }
+    }, {
+      path: '/dashboard/apartment',
+      name: 'apartment',
+      component: function component() {
+        return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(3)]).then(__webpack_require__.bind(null, /*! ./views/apartment/browse.vue */ "./resources/js/src/views/apartment/browse.vue"));
+      },
+      beforeEnter: guard,
+      meta: {
+        breadcrumb: [{
+          title: 'Home',
+          url: '/dashboard',
+          i18n: 'Home'
+        }, {
+          title: 'Apartment',
+          active: true,
+          i18n: 'Apartment'
+        }],
+        pageTitle: 'Apartment',
+        pageTitle_i18n: 'Apartment',
+        permission: 'browse-apartment'
+      }
+    }, {
+      path: '/dashboard/apartment/create',
+      name: 'add-apartment',
+      component: function component() {
+        return __webpack_require__.e(/*! import() */ 6).then(__webpack_require__.bind(null, /*! ./views/apartment/create.vue */ "./resources/js/src/views/apartment/create.vue"));
+      },
+      beforeEnter: guard,
+      meta: {
+        breadcrumb: [{
+          title: 'Home',
+          url: '/dashboard',
+          i18n: 'Home'
+        }, {
+          title: 'Apartment',
+          url: '/dashboard/apartment',
+          i18n: 'Apartment'
+        }, {
+          title: 'Add Apartment',
+          active: true,
+          i18n: 'AddApartment'
+        }],
+        pageTitle: 'Add Apartment',
+        pageTitle_i18n: 'AddApartment',
+        permission: 'create-apartment'
+      }
+    }, {
+      path: '/dashboard/apartment/:id',
+      name: 'view-apartment',
+      component: function component() {
+        return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(2), __webpack_require__.e(8)]).then(__webpack_require__.bind(null, /*! ./views/apartment/view.vue */ "./resources/js/src/views/apartment/view.vue"));
+      },
+      beforeEnter: guard,
+      meta: {
+        breadcrumb: [{
+          title: 'Home',
+          url: '/dashboard',
+          i18n: 'Home'
+        }, {
+          title: 'Apartment',
+          url: '/dashboard/apartment',
+          i18n: 'Apartment'
+        }, {
+          title: 'View Apartment',
+          url: '/dashboard/apartment/:id',
+          active: true,
+          i18n: 'ViewApartment'
+        }],
+        pageTitle: 'View Apartment',
+        pageTitle_i18n: 'viewApartment',
+        permission: 'view-apartment'
+      }
+    }, {
+      path: '/dashboard/apartment/:id/edit',
+      name: 'edit-apartment',
+      component: function component() {
+        return __webpack_require__.e(/*! import() */ 7).then(__webpack_require__.bind(null, /*! ./views/apartment/edit.vue */ "./resources/js/src/views/apartment/edit.vue"));
+      },
+      beforeEnter: guard,
+      meta: {
+        breadcrumb: [{
+          title: 'Home',
+          url: '/dashboard',
+          i18n: 'Home'
+        }, {
+          title: 'Apartment',
+          url: '/dashboard/apartment',
+          i18n: 'Apartment'
+        }, {
+          title: 'Edit Apartment',
+          active: true,
+          i18n: 'editApartment'
+        }],
+        pageTitle: 'Edit Apartment',
+        pageTitle_i18n: 'editApartment',
+        permission: 'edit-apartment'
+      }
+    }, {
+      path: '/dashboard/customer',
+      name: 'customer',
+      component: function component() {
+        return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(9)]).then(__webpack_require__.bind(null, /*! ./views/customer/browse.vue */ "./resources/js/src/views/customer/browse.vue"));
+      },
+      beforeEnter: guard,
+      meta: {
+        breadcrumb: [{
+          title: 'Home',
+          url: '/dashboard',
+          i18n: 'Home'
+        }, {
+          title: 'Customer',
+          active: true,
+          i18n: 'Customer'
+        }],
+        pageTitle: 'Customer',
+        pageTitle_i18n: 'Customer',
+        permission: 'browse-customer'
+      }
+    }, {
+      path: '/dashboard/customer/create',
+      name: 'add-customer',
+      component: function component() {
+        return __webpack_require__.e(/*! import() */ 10).then(__webpack_require__.bind(null, /*! ./views/customer/create.vue */ "./resources/js/src/views/customer/create.vue"));
+      },
+      beforeEnter: guard,
+      meta: {
+        breadcrumb: [{
+          title: 'Home',
+          url: '/dashboard',
+          i18n: 'Home'
+        }, {
+          title: 'Customer',
+          url: '/dashboard/customer',
+          i18n: 'Customer'
+        }, {
+          title: 'Add Customer',
+          active: true,
+          i18n: 'AddCustomer'
+        }],
+        pageTitle: 'Add Customer',
+        pageTitle_i18n: 'AddCustomer',
+        permission: 'create-customer'
+      }
+    }, {
+      path: '/dashboard/customer/:id',
+      name: 'view-customer',
+      component: function component() {
+        return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(1), __webpack_require__.e(2), __webpack_require__.e(12)]).then(__webpack_require__.bind(null, /*! ./views/customer/view.vue */ "./resources/js/src/views/customer/view.vue"));
+      },
+      beforeEnter: guard,
+      meta: {
+        breadcrumb: [{
+          title: 'Home',
+          url: '/dashboard',
+          i18n: 'Home'
+        }, {
+          title: 'Customer',
+          url: '/dashboard/customer',
+          i18n: 'Customer'
+        }, {
+          title: 'View Customer',
+          url: '/dashboard/customer/:id',
+          active: true,
+          i18n: 'ViewCustomer'
+        }],
+        pageTitle: 'View Customer',
+        pageTitle_i18n: 'viewCustomer',
+        permission: 'view-customer'
+      }
+    }, {
+      path: '/dashboard/customer/:id/edit',
+      name: 'edit-customer',
+      component: function component() {
+        return __webpack_require__.e(/*! import() */ 11).then(__webpack_require__.bind(null, /*! ./views/customer/edit.vue */ "./resources/js/src/views/customer/edit.vue"));
+      },
+      beforeEnter: guard,
+      meta: {
+        breadcrumb: [{
+          title: 'Home',
+          url: '/dashboard',
+          i18n: 'Home'
+        }, {
+          title: 'Customer',
+          url: '/dashboard/customer',
+          i18n: 'Customer'
+        }, {
+          title: 'Edit Customer',
+          active: true,
+          i18n: 'editCustomer'
+        }],
+        pageTitle: 'Edit Customer',
+        pageTitle_i18n: 'editCustomer',
+        permission: 'edit-customer'
+      }
+    }, {
+      path: '/dashboard/lead',
+      name: 'lead',
+      component: function component() {
+        return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(1)]).then(__webpack_require__.bind(null, /*! ./views/lead/browse.vue */ "./resources/js/src/views/lead/browse.vue"));
+      },
+      beforeEnter: guard,
+      meta: {
+        breadcrumb: [{
+          title: 'Home',
+          url: '/dashboard',
+          i18n: 'Home'
+        }, {
+          title: 'Lead',
+          active: true,
+          i18n: 'Lead'
+        }],
+        pageTitle: 'Lead',
+        pageTitle_i18n: 'Lead',
+        permission: 'browse-follow-up'
+      }
+    }, {
+      path: '/dashboard/lead/create',
+      name: 'add-lead',
+      component: function component() {
+        return __webpack_require__.e(/*! import() */ 13).then(__webpack_require__.bind(null, /*! ./views/lead/create.vue */ "./resources/js/src/views/lead/create.vue"));
+      },
+      beforeEnter: guard,
+      meta: {
+        breadcrumb: [{
+          title: 'Home',
+          url: '/dashboard',
+          i18n: 'Home'
+        }, {
+          title: 'Lead',
+          url: '/dashboard/lead',
+          i18n: 'Lead'
+        }, {
+          title: 'Add Lead',
+          active: true,
+          i18n: 'AddLead'
+        }],
+        pageTitle: 'Add Lead',
+        pageTitle_i18n: 'AddLead',
+        permission: 'create-follow-up'
+      }
+    }, {
+      path: '/dashboard/lead/:id',
+      name: 'view-lead',
+      component: function component() {
+        return __webpack_require__.e(/*! import() */ 15).then(__webpack_require__.bind(null, /*! ./views/lead/view.vue */ "./resources/js/src/views/lead/view.vue"));
+      },
+      beforeEnter: guard,
+      meta: {
+        breadcrumb: [{
+          title: 'Home',
+          url: '/dashboard',
+          i18n: 'Home'
+        }, {
+          title: 'Lead',
+          url: '/dashboard/lead',
+          i18n: 'Lead'
+        }, {
+          title: 'Lead',
+          url: '/dashboard/lead/:id',
+          active: true,
+          i18n: 'Lead'
+        }],
+        pageTitle: 'View Lead',
+        pageTitle_i18n: 'viewLead',
+        permission: 'view-follow-up'
+      }
+    }, {
+      path: '/dashboard/lead/:id/edit',
+      name: 'edit-lead',
+      component: function component() {
+        return __webpack_require__.e(/*! import() */ 14).then(__webpack_require__.bind(null, /*! ./views/lead/edit.vue */ "./resources/js/src/views/lead/edit.vue"));
+      },
+      beforeEnter: guard,
+      meta: {
+        breadcrumb: [{
+          title: 'Home',
+          url: '/dashboard',
+          i18n: 'Home'
+        }, {
+          title: 'Lead',
+          url: '/dashboard/lead',
+          i18n: 'Lead'
+        }, {
+          title: 'Edit Lead',
+          active: true,
+          i18n: 'editLead'
+        }],
+        pageTitle: 'Edit Lead',
+        pageTitle_i18n: 'editLead',
+        permission: 'edit-follow-up'
+      }
+    }, {
+      path: '/dashboard/purchase',
+      name: 'purchase',
+      component: function component() {
+        return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(2)]).then(__webpack_require__.bind(null, /*! ./views/purchase/browse.vue */ "./resources/js/src/views/purchase/browse.vue"));
+      },
+      beforeEnter: guard,
+      meta: {
+        breadcrumb: [{
+          title: 'Home',
+          url: '/dashboard',
+          i18n: 'Home'
+        }, {
+          title: 'Purchase',
+          active: true,
+          i18n: 'Purchase'
+        }],
+        pageTitle: 'Purchase',
+        pageTitle_i18n: 'Purchase',
+        permission: 'browse-purchase'
+      }
+    }, {
+      path: '/dashboard/purchase/create',
+      name: 'add-purchase',
+      component: function component() {
+        return __webpack_require__.e(/*! import() */ 21).then(__webpack_require__.bind(null, /*! ./views/purchase/create.vue */ "./resources/js/src/views/purchase/create.vue"));
+      },
+      beforeEnter: guard,
+      meta: {
+        breadcrumb: [{
+          title: 'Home',
+          url: '/dashboard',
+          i18n: 'Home'
+        }, {
+          title: 'Purchase',
+          url: '/dashboard/purchase',
+          i18n: 'Purchase'
+        }, {
+          title: 'Add Purchase',
+          active: true,
+          i18n: 'AddPurchase'
+        }],
+        pageTitle: 'Add Purchase',
+        pageTitle_i18n: 'AddPurchase',
+        permission: 'create-purchase'
+      }
+    }, {
+      path: '/dashboard/purchase/:id',
+      name: 'view-purchase',
+      component: function component() {
+        return __webpack_require__.e(/*! import() */ 23).then(__webpack_require__.bind(null, /*! ./views/purchase/view.vue */ "./resources/js/src/views/purchase/view.vue"));
+      },
+      beforeEnter: guard,
+      meta: {
+        breadcrumb: [{
+          title: 'Home',
+          url: '/dashboard',
+          i18n: 'Home'
+        }, {
+          title: 'Purchase',
+          url: '/dashboard/purchase',
+          i18n: 'Purchase'
+        }, {
+          title: 'View Purchase',
+          active: true,
+          i18n: 'viewPurchase'
+        }],
+        pageTitle: 'View Purchase',
+        pageTitle_i18n: 'viewPurchase',
+        permission: 'view-purchase'
+      }
+    }, {
+      path: '/dashboard/purchase/:id/edit',
+      name: 'edit-purchase',
+      component: function component() {
+        return __webpack_require__.e(/*! import() */ 22).then(__webpack_require__.bind(null, /*! ./views/purchase/edit.vue */ "./resources/js/src/views/purchase/edit.vue"));
+      },
+      beforeEnter: guard,
+      meta: {
+        breadcrumb: [{
+          title: 'Home',
+          url: '/dashboard',
+          i18n: 'Home'
+        }, {
+          title: 'Purchase',
+          url: '/dashboard/purchase',
+          i18n: 'Purchase'
+        }, {
+          title: 'Edit Purchase',
+          active: true,
+          i18n: 'editPurchase'
+        }],
+        pageTitle: 'Edit Purchase',
+        pageTitle_i18n: 'editPurchase',
+        permission: 'edit-purchase'
+      }
+    }, {
       path: '/dashboard/settings/role',
       name: 'role',
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 11).then(__webpack_require__.bind(null, /*! ./views/settings/Role/Roles.vue */ "./resources/js/src/views/settings/Role/Roles.vue"));
+        return __webpack_require__.e(/*! import() */ 32).then(__webpack_require__.bind(null, /*! ./views/settings/Role/Roles.vue */ "./resources/js/src/views/settings/Role/Roles.vue"));
       },
       beforeEnter: guard,
       meta: {
@@ -72828,7 +73487,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
       path: '/dashboard/settings/role/create',
       name: 'create-role',
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 4).then(__webpack_require__.bind(null, /*! ./views/settings/Role/Create.vue */ "./resources/js/src/views/settings/Role/Create.vue"));
+        return __webpack_require__.e(/*! import() */ 24).then(__webpack_require__.bind(null, /*! ./views/settings/Role/Create.vue */ "./resources/js/src/views/settings/Role/Create.vue"));
       },
       beforeEnter: guard,
       meta: {
@@ -72851,7 +73510,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
       path: '/dashboard/settings/role/:id',
       name: 'view-role',
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 12).then(__webpack_require__.bind(null, /*! ./views/settings/Role/View.vue */ "./resources/js/src/views/settings/Role/View.vue"));
+        return __webpack_require__.e(/*! import() */ 33).then(__webpack_require__.bind(null, /*! ./views/settings/Role/View.vue */ "./resources/js/src/views/settings/Role/View.vue"));
       },
       beforeEnter: guard,
       meta: {
@@ -72874,7 +73533,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
       path: '/dashboard/settings/role/edit/:id',
       name: 'edit-role',
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 5).then(__webpack_require__.bind(null, /*! ./views/settings/Role/Edit.vue */ "./resources/js/src/views/settings/Role/Edit.vue"));
+        return __webpack_require__.e(/*! import() */ 25).then(__webpack_require__.bind(null, /*! ./views/settings/Role/Edit.vue */ "./resources/js/src/views/settings/Role/Edit.vue"));
       },
       beforeEnter: guard,
       meta: {
@@ -72897,7 +73556,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
       path: '/dashboard/profile',
       name: 'profile',
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 3).then(__webpack_require__.bind(null, /*! ./views/profile/profile */ "./resources/js/src/views/profile/profile.vue"));
+        return __webpack_require__.e(/*! import() */ 16).then(__webpack_require__.bind(null, /*! ./views/profile/profile */ "./resources/js/src/views/profile/profile.vue"));
       },
       beforeEnter: guard,
       meta: {
@@ -72917,7 +73576,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
   {
     path: '',
     component: function component() {
-      return __webpack_require__.e(/*! import() */ 15).then(__webpack_require__.bind(null, /*! @/layouts/full-page/FullPage.vue */ "./resources/js/src/layouts/full-page/FullPage.vue"));
+      return __webpack_require__.e(/*! import() */ 36).then(__webpack_require__.bind(null, /*! @/layouts/full-page/FullPage.vue */ "./resources/js/src/layouts/full-page/FullPage.vue"));
     },
     children: [// =============================================================================
     // PAGES
@@ -72926,19 +73585,19 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
       path: '/dashboard/login',
       name: 'pageLogin',
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 10).then(__webpack_require__.bind(null, /*! ./views/pages/Login.vue */ "./resources/js/src/views/pages/Login.vue"));
+        return __webpack_require__.e(/*! import() */ 30).then(__webpack_require__.bind(null, /*! ./views/pages/Login.vue */ "./resources/js/src/views/pages/Login.vue"));
       }
     }, {
       path: '/dashboard/error-403',
       name: 'pageError403',
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 14).then(__webpack_require__.bind(null, /*! ./views/pages/NotAuthorized.vue */ "./resources/js/src/views/pages/NotAuthorized.vue"));
+        return __webpack_require__.e(/*! import() */ 35).then(__webpack_require__.bind(null, /*! ./views/pages/NotAuthorized.vue */ "./resources/js/src/views/pages/NotAuthorized.vue"));
       }
     }, {
       path: '/dashboard/error-404',
       name: 'pageError404',
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 13).then(__webpack_require__.bind(null, /*! ./views/pages/Error404.vue */ "./resources/js/src/views/pages/Error404.vue"));
+        return __webpack_require__.e(/*! import() */ 34).then(__webpack_require__.bind(null, /*! ./views/pages/Error404.vue */ "./resources/js/src/views/pages/Error404.vue"));
       }
     }]
   }, // Redirect to 404 page, if no match found
@@ -72967,7 +73626,7 @@ function can(permission) {
 }
 
 function guard(to, from, next) {
-  if (_store_store__WEBPACK_IMPORTED_MODULE_2__["default"].state.auth.accessToken) {
+  if (_store_store__WEBPACK_IMPORTED_MODULE_2__["default"].state.auth.accessToken && _store_store__WEBPACK_IMPORTED_MODULE_2__["default"].state.auth.AppActiveUser) {
     _http_axios_index_js__WEBPACK_IMPORTED_MODULE_3__["default"].defaults.headers.common['Authorization'] = "Bearer ".concat(_store_store__WEBPACK_IMPORTED_MODULE_2__["default"].state.auth.accessToken.accessToken);
 
     if (new Date(Date.now()) < new Date(_store_store__WEBPACK_IMPORTED_MODULE_2__["default"].state.auth.accessToken.token.expires_at)) {
@@ -73071,6 +73730,168 @@ var actions = {
   }
 };
 /* harmony default export */ __webpack_exports__["default"] = (actions);
+
+/***/ }),
+
+/***/ "./resources/js/src/store/apartment/moduleApartment.js":
+/*!*************************************************************!*\
+  !*** ./resources/js/src/store/apartment/moduleApartment.js ***!
+  \*************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _moduleApartmentState__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./moduleApartmentState */ "./resources/js/src/store/apartment/moduleApartmentState.js");
+/* harmony import */ var _moduleApartmentMutations__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./moduleApartmentMutations */ "./resources/js/src/store/apartment/moduleApartmentMutations.js");
+/* harmony import */ var _moduleApartmentActions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./moduleApartmentActions */ "./resources/js/src/store/apartment/moduleApartmentActions.js");
+/* harmony import */ var _moduleApartmentGetters__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./moduleApartmentGetters */ "./resources/js/src/store/apartment/moduleApartmentGetters.js");
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  namespaced: true,
+  state: _moduleApartmentState__WEBPACK_IMPORTED_MODULE_0__["default"],
+  mutations: _moduleApartmentMutations__WEBPACK_IMPORTED_MODULE_1__["default"],
+  actions: _moduleApartmentActions__WEBPACK_IMPORTED_MODULE_2__["default"],
+  getters: _moduleApartmentGetters__WEBPACK_IMPORTED_MODULE_3__["default"]
+});
+
+/***/ }),
+
+/***/ "./resources/js/src/store/apartment/moduleApartmentActions.js":
+/*!********************************************************************!*\
+  !*** ./resources/js/src/store/apartment/moduleApartmentActions.js ***!
+  \********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _http_requests_apartment_index__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../http/requests/apartment/index */ "./resources/js/src/http/requests/apartment/index.js");
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  getData: function getData(_ref, payload) {
+    var commit = _ref.commit,
+        dispatch = _ref.dispatch;
+    return new Promise(function (resolve, reject) {
+      _http_requests_apartment_index__WEBPACK_IMPORTED_MODULE_0__["default"].getAll(payload).then(function (response) {
+        resolve(response);
+      }).catch(function (error) {
+        dispatch('handleError', {
+          reject: reject,
+          error: error
+        }, {
+          root: true
+        });
+      });
+    });
+  },
+  view: function view(_ref2, id) {
+    var commit = _ref2.commit,
+        dispatch = _ref2.dispatch;
+    return new Promise(function (resolve, reject) {
+      _http_requests_apartment_index__WEBPACK_IMPORTED_MODULE_0__["default"].view(id).then(function (response) {
+        resolve(response);
+      }).catch(function (error) {
+        dispatch('handleError', {
+          reject: reject,
+          error: error
+        }, {
+          root: true
+        });
+      });
+    });
+  },
+  create: function create(_ref3, payload) {
+    var commit = _ref3.commit,
+        dispatch = _ref3.dispatch;
+    return new Promise(function (resolve, reject) {
+      _http_requests_apartment_index__WEBPACK_IMPORTED_MODULE_0__["default"].create(payload).then(function (response) {
+        resolve(response);
+      }).catch(function (error) {
+        dispatch('handleError', {
+          reject: reject,
+          error: error
+        }, {
+          root: true
+        });
+      });
+    });
+  },
+  update: function update(_ref4, payload) {
+    var commit = _ref4.commit,
+        dispatch = _ref4.dispatch;
+    return new Promise(function (resolve, reject) {
+      _http_requests_apartment_index__WEBPACK_IMPORTED_MODULE_0__["default"].update(payload.id, payload.data).then(function (response) {
+        resolve(response);
+      }).catch(function (error) {
+        dispatch('handleError', {
+          reject: reject,
+          error: error
+        }, {
+          root: true
+        });
+      });
+    });
+  },
+  delete: function _delete(_ref5, id) {
+    var commit = _ref5.commit,
+        dispatch = _ref5.dispatch;
+    return new Promise(function (resolve, reject) {
+      _http_requests_apartment_index__WEBPACK_IMPORTED_MODULE_0__["default"].delete(id).then(function (response) {
+        resolve(response);
+      }).catch(function (error) {
+        dispatch('handleError', {
+          reject: reject,
+          error: error
+        }, {
+          root: true
+        });
+      });
+    });
+  }
+});
+
+/***/ }),
+
+/***/ "./resources/js/src/store/apartment/moduleApartmentGetters.js":
+/*!********************************************************************!*\
+  !*** ./resources/js/src/store/apartment/moduleApartmentGetters.js ***!
+  \********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({});
+
+/***/ }),
+
+/***/ "./resources/js/src/store/apartment/moduleApartmentMutations.js":
+/*!**********************************************************************!*\
+  !*** ./resources/js/src/store/apartment/moduleApartmentMutations.js ***!
+  \**********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({});
+
+/***/ }),
+
+/***/ "./resources/js/src/store/apartment/moduleApartmentState.js":
+/*!******************************************************************!*\
+  !*** ./resources/js/src/store/apartment/moduleApartmentState.js ***!
+  \******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
 
@@ -73277,6 +74098,330 @@ var userDefaults = {
 
 /***/ }),
 
+/***/ "./resources/js/src/store/customer/moduleCustomer.js":
+/*!***********************************************************!*\
+  !*** ./resources/js/src/store/customer/moduleCustomer.js ***!
+  \***********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _moduleCustomerState__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./moduleCustomerState */ "./resources/js/src/store/customer/moduleCustomerState.js");
+/* harmony import */ var _moduleCustomerMutations__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./moduleCustomerMutations */ "./resources/js/src/store/customer/moduleCustomerMutations.js");
+/* harmony import */ var _moduleCustomerActions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./moduleCustomerActions */ "./resources/js/src/store/customer/moduleCustomerActions.js");
+/* harmony import */ var _moduleCustomerGetters__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./moduleCustomerGetters */ "./resources/js/src/store/customer/moduleCustomerGetters.js");
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  namespaced: true,
+  state: _moduleCustomerState__WEBPACK_IMPORTED_MODULE_0__["default"],
+  mutations: _moduleCustomerMutations__WEBPACK_IMPORTED_MODULE_1__["default"],
+  actions: _moduleCustomerActions__WEBPACK_IMPORTED_MODULE_2__["default"],
+  getters: _moduleCustomerGetters__WEBPACK_IMPORTED_MODULE_3__["default"]
+});
+
+/***/ }),
+
+/***/ "./resources/js/src/store/customer/moduleCustomerActions.js":
+/*!******************************************************************!*\
+  !*** ./resources/js/src/store/customer/moduleCustomerActions.js ***!
+  \******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _http_requests_customer_index__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../http/requests/customer/index */ "./resources/js/src/http/requests/customer/index.js");
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  getData: function getData(_ref, payload) {
+    var commit = _ref.commit,
+        dispatch = _ref.dispatch;
+    return new Promise(function (resolve, reject) {
+      _http_requests_customer_index__WEBPACK_IMPORTED_MODULE_0__["default"].getAll(payload).then(function (response) {
+        resolve(response);
+      }).catch(function (error) {
+        dispatch('handleError', {
+          reject: reject,
+          error: error
+        }, {
+          root: true
+        });
+      });
+    });
+  },
+  view: function view(_ref2, id) {
+    var commit = _ref2.commit,
+        dispatch = _ref2.dispatch;
+    return new Promise(function (resolve, reject) {
+      _http_requests_customer_index__WEBPACK_IMPORTED_MODULE_0__["default"].view(id).then(function (response) {
+        resolve(response);
+      }).catch(function (error) {
+        dispatch('handleError', {
+          reject: reject,
+          error: error
+        }, {
+          root: true
+        });
+      });
+    });
+  },
+  create: function create(_ref3, payload) {
+    var commit = _ref3.commit,
+        dispatch = _ref3.dispatch;
+    return new Promise(function (resolve, reject) {
+      _http_requests_customer_index__WEBPACK_IMPORTED_MODULE_0__["default"].create(payload).then(function (response) {
+        resolve(response);
+      }).catch(function (error) {
+        dispatch('handleError', {
+          reject: reject,
+          error: error
+        }, {
+          root: true
+        });
+      });
+    });
+  },
+  update: function update(_ref4, payload) {
+    var commit = _ref4.commit,
+        dispatch = _ref4.dispatch;
+    return new Promise(function (resolve, reject) {
+      _http_requests_customer_index__WEBPACK_IMPORTED_MODULE_0__["default"].update(payload.id, payload.data).then(function (response) {
+        resolve(response);
+      }).catch(function (error) {
+        dispatch('handleError', {
+          reject: reject,
+          error: error
+        }, {
+          root: true
+        });
+      });
+    });
+  },
+  delete: function _delete(_ref5, id) {
+    var commit = _ref5.commit,
+        dispatch = _ref5.dispatch;
+    return new Promise(function (resolve, reject) {
+      _http_requests_customer_index__WEBPACK_IMPORTED_MODULE_0__["default"].delete(id).then(function (response) {
+        resolve(response);
+      }).catch(function (error) {
+        dispatch('handleError', {
+          reject: reject,
+          error: error
+        }, {
+          root: true
+        });
+      });
+    });
+  }
+});
+
+/***/ }),
+
+/***/ "./resources/js/src/store/customer/moduleCustomerGetters.js":
+/*!******************************************************************!*\
+  !*** ./resources/js/src/store/customer/moduleCustomerGetters.js ***!
+  \******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({});
+
+/***/ }),
+
+/***/ "./resources/js/src/store/customer/moduleCustomerMutations.js":
+/*!********************************************************************!*\
+  !*** ./resources/js/src/store/customer/moduleCustomerMutations.js ***!
+  \********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({});
+
+/***/ }),
+
+/***/ "./resources/js/src/store/customer/moduleCustomerState.js":
+/*!****************************************************************!*\
+  !*** ./resources/js/src/store/customer/moduleCustomerState.js ***!
+  \****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({});
+
+/***/ }),
+
+/***/ "./resources/js/src/store/follow-up/moduleFollowUp.js":
+/*!************************************************************!*\
+  !*** ./resources/js/src/store/follow-up/moduleFollowUp.js ***!
+  \************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _moduleFollowUpState__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./moduleFollowUpState */ "./resources/js/src/store/follow-up/moduleFollowUpState.js");
+/* harmony import */ var _moduleFollowUpMutations__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./moduleFollowUpMutations */ "./resources/js/src/store/follow-up/moduleFollowUpMutations.js");
+/* harmony import */ var _moduleFollowUpActions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./moduleFollowUpActions */ "./resources/js/src/store/follow-up/moduleFollowUpActions.js");
+/* harmony import */ var _moduleFollowUpGetters__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./moduleFollowUpGetters */ "./resources/js/src/store/follow-up/moduleFollowUpGetters.js");
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  namespaced: true,
+  state: _moduleFollowUpState__WEBPACK_IMPORTED_MODULE_0__["default"],
+  mutations: _moduleFollowUpMutations__WEBPACK_IMPORTED_MODULE_1__["default"],
+  actions: _moduleFollowUpActions__WEBPACK_IMPORTED_MODULE_2__["default"],
+  getters: _moduleFollowUpGetters__WEBPACK_IMPORTED_MODULE_3__["default"]
+});
+
+/***/ }),
+
+/***/ "./resources/js/src/store/follow-up/moduleFollowUpActions.js":
+/*!*******************************************************************!*\
+  !*** ./resources/js/src/store/follow-up/moduleFollowUpActions.js ***!
+  \*******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _http_requests_follow_up_index__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../http/requests/follow-up/index */ "./resources/js/src/http/requests/follow-up/index.js");
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  getData: function getData(_ref, payload) {
+    var commit = _ref.commit,
+        dispatch = _ref.dispatch;
+    return new Promise(function (resolve, reject) {
+      _http_requests_follow_up_index__WEBPACK_IMPORTED_MODULE_0__["default"].getAll(payload).then(function (response) {
+        resolve(response);
+      }).catch(function (error) {
+        dispatch('handleError', {
+          reject: reject,
+          error: error
+        }, {
+          root: true
+        });
+      });
+    });
+  },
+  view: function view(_ref2, id) {
+    var commit = _ref2.commit,
+        dispatch = _ref2.dispatch;
+    return new Promise(function (resolve, reject) {
+      _http_requests_follow_up_index__WEBPACK_IMPORTED_MODULE_0__["default"].view(id).then(function (response) {
+        resolve(response);
+      }).catch(function (error) {
+        dispatch('handleError', {
+          reject: reject,
+          error: error
+        }, {
+          root: true
+        });
+      });
+    });
+  },
+  create: function create(_ref3, payload) {
+    var commit = _ref3.commit,
+        dispatch = _ref3.dispatch;
+    return new Promise(function (resolve, reject) {
+      _http_requests_follow_up_index__WEBPACK_IMPORTED_MODULE_0__["default"].create(payload).then(function (response) {
+        resolve(response);
+      }).catch(function (error) {
+        dispatch('handleError', {
+          reject: reject,
+          error: error
+        }, {
+          root: true
+        });
+      });
+    });
+  },
+  update: function update(_ref4, payload) {
+    var commit = _ref4.commit,
+        dispatch = _ref4.dispatch;
+    return new Promise(function (resolve, reject) {
+      _http_requests_follow_up_index__WEBPACK_IMPORTED_MODULE_0__["default"].update(payload.id, payload.data).then(function (response) {
+        resolve(response);
+      }).catch(function (error) {
+        dispatch('handleError', {
+          reject: reject,
+          error: error
+        }, {
+          root: true
+        });
+      });
+    });
+  },
+  delete: function _delete(_ref5, id) {
+    var commit = _ref5.commit,
+        dispatch = _ref5.dispatch;
+    return new Promise(function (resolve, reject) {
+      _http_requests_follow_up_index__WEBPACK_IMPORTED_MODULE_0__["default"].delete(id).then(function (response) {
+        resolve(response);
+      }).catch(function (error) {
+        dispatch('handleError', {
+          reject: reject,
+          error: error
+        }, {
+          root: true
+        });
+      });
+    });
+  }
+});
+
+/***/ }),
+
+/***/ "./resources/js/src/store/follow-up/moduleFollowUpGetters.js":
+/*!*******************************************************************!*\
+  !*** ./resources/js/src/store/follow-up/moduleFollowUpGetters.js ***!
+  \*******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({});
+
+/***/ }),
+
+/***/ "./resources/js/src/store/follow-up/moduleFollowUpMutations.js":
+/*!*********************************************************************!*\
+  !*** ./resources/js/src/store/follow-up/moduleFollowUpMutations.js ***!
+  \*********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({});
+
+/***/ }),
+
+/***/ "./resources/js/src/store/follow-up/moduleFollowUpState.js":
+/*!*****************************************************************!*\
+  !*** ./resources/js/src/store/follow-up/moduleFollowUpState.js ***!
+  \*****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({});
+
+/***/ }),
+
 /***/ "./resources/js/src/store/getters.js":
 /*!*******************************************!*\
   !*** ./resources/js/src/store/getters.js ***!
@@ -73415,6 +74560,346 @@ var mutations = {
   }
 };
 /* harmony default export */ __webpack_exports__["default"] = (mutations);
+
+/***/ }),
+
+/***/ "./resources/js/src/store/project/moduleProject.js":
+/*!*********************************************************!*\
+  !*** ./resources/js/src/store/project/moduleProject.js ***!
+  \*********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _moduleProjectState__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./moduleProjectState */ "./resources/js/src/store/project/moduleProjectState.js");
+/* harmony import */ var _moduleProjectMutations__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./moduleProjectMutations */ "./resources/js/src/store/project/moduleProjectMutations.js");
+/* harmony import */ var _moduleProjectActions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./moduleProjectActions */ "./resources/js/src/store/project/moduleProjectActions.js");
+/* harmony import */ var _moduleProjectGetters__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./moduleProjectGetters */ "./resources/js/src/store/project/moduleProjectGetters.js");
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  namespaced: true,
+  state: _moduleProjectState__WEBPACK_IMPORTED_MODULE_0__["default"],
+  mutations: _moduleProjectMutations__WEBPACK_IMPORTED_MODULE_1__["default"],
+  actions: _moduleProjectActions__WEBPACK_IMPORTED_MODULE_2__["default"],
+  getters: _moduleProjectGetters__WEBPACK_IMPORTED_MODULE_3__["default"]
+});
+
+/***/ }),
+
+/***/ "./resources/js/src/store/project/moduleProjectActions.js":
+/*!****************************************************************!*\
+  !*** ./resources/js/src/store/project/moduleProjectActions.js ***!
+  \****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _http_requests_project_index__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../http/requests/project/index */ "./resources/js/src/http/requests/project/index.js");
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  getData: function getData(_ref, payload) {
+    var commit = _ref.commit,
+        dispatch = _ref.dispatch;
+    return new Promise(function (resolve, reject) {
+      _http_requests_project_index__WEBPACK_IMPORTED_MODULE_0__["default"].getAll(payload).then(function (response) {
+        resolve(response);
+      }).catch(function (error) {
+        dispatch('handleError', {
+          reject: reject,
+          error: error
+        }, {
+          root: true
+        });
+      });
+    });
+  },
+  view: function view(_ref2, id) {
+    var commit = _ref2.commit,
+        dispatch = _ref2.dispatch;
+    return new Promise(function (resolve, reject) {
+      _http_requests_project_index__WEBPACK_IMPORTED_MODULE_0__["default"].view(id).then(function (response) {
+        resolve(response);
+      }).catch(function (error) {
+        dispatch('handleError', {
+          reject: reject,
+          error: error
+        }, {
+          root: true
+        });
+      });
+    });
+  },
+  create: function create(_ref3, payload) {
+    var commit = _ref3.commit,
+        dispatch = _ref3.dispatch;
+    return new Promise(function (resolve, reject) {
+      _http_requests_project_index__WEBPACK_IMPORTED_MODULE_0__["default"].create(payload).then(function (response) {
+        resolve(response);
+      }).catch(function (error) {
+        dispatch('handleError', {
+          reject: reject,
+          error: error
+        }, {
+          root: true
+        });
+      });
+    });
+  },
+  update: function update(_ref4, payload) {
+    var commit = _ref4.commit,
+        dispatch = _ref4.dispatch;
+    return new Promise(function (resolve, reject) {
+      _http_requests_project_index__WEBPACK_IMPORTED_MODULE_0__["default"].update(payload.id, payload.data).then(function (response) {
+        resolve(response);
+      }).catch(function (error) {
+        dispatch('handleError', {
+          reject: reject,
+          error: error
+        }, {
+          root: true
+        });
+      });
+    });
+  },
+  delete: function _delete(_ref5, id) {
+    var commit = _ref5.commit,
+        dispatch = _ref5.dispatch;
+    return new Promise(function (resolve, reject) {
+      _http_requests_project_index__WEBPACK_IMPORTED_MODULE_0__["default"].delete(id).then(function (response) {
+        resolve(response);
+      }).catch(function (error) {
+        dispatch('handleError', {
+          reject: reject,
+          error: error
+        }, {
+          root: true
+        });
+      });
+    });
+  }
+});
+
+/***/ }),
+
+/***/ "./resources/js/src/store/project/moduleProjectGetters.js":
+/*!****************************************************************!*\
+  !*** ./resources/js/src/store/project/moduleProjectGetters.js ***!
+  \****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({});
+
+/***/ }),
+
+/***/ "./resources/js/src/store/project/moduleProjectMutations.js":
+/*!******************************************************************!*\
+  !*** ./resources/js/src/store/project/moduleProjectMutations.js ***!
+  \******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({});
+
+/***/ }),
+
+/***/ "./resources/js/src/store/project/moduleProjectState.js":
+/*!**************************************************************!*\
+  !*** ./resources/js/src/store/project/moduleProjectState.js ***!
+  \**************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({});
+
+/***/ }),
+
+/***/ "./resources/js/src/store/purchase/modulePurchase.js":
+/*!***********************************************************!*\
+  !*** ./resources/js/src/store/purchase/modulePurchase.js ***!
+  \***********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _modulePurchaseState__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modulePurchaseState */ "./resources/js/src/store/purchase/modulePurchaseState.js");
+/* harmony import */ var _modulePurchaseGetters__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modulePurchaseGetters */ "./resources/js/src/store/purchase/modulePurchaseGetters.js");
+/* harmony import */ var _modulePurchaseActions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modulePurchaseActions */ "./resources/js/src/store/purchase/modulePurchaseActions.js");
+/* harmony import */ var _modulePurchaseMutations__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modulePurchaseMutations */ "./resources/js/src/store/purchase/modulePurchaseMutations.js");
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  namespaced: true,
+  state: _modulePurchaseState__WEBPACK_IMPORTED_MODULE_0__["default"],
+  mutations: _modulePurchaseGetters__WEBPACK_IMPORTED_MODULE_1__["default"],
+  actions: _modulePurchaseActions__WEBPACK_IMPORTED_MODULE_2__["default"],
+  getters: _modulePurchaseMutations__WEBPACK_IMPORTED_MODULE_3__["default"]
+});
+
+/***/ }),
+
+/***/ "./resources/js/src/store/purchase/modulePurchaseActions.js":
+/*!******************************************************************!*\
+  !*** ./resources/js/src/store/purchase/modulePurchaseActions.js ***!
+  \******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _http_requests_purchase_index__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../http/requests/purchase/index */ "./resources/js/src/http/requests/purchase/index.js");
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  getData: function getData(_ref, payload) {
+    var commit = _ref.commit,
+        dispatch = _ref.dispatch;
+    return new Promise(function (resolve, reject) {
+      _http_requests_purchase_index__WEBPACK_IMPORTED_MODULE_0__["default"].getAll(payload).then(function (response) {
+        resolve(response);
+      }).catch(function (error) {
+        dispatch('handleError', {
+          reject: reject,
+          error: error
+        }, {
+          root: true
+        });
+      });
+    });
+  },
+  getCreate: function getCreate(_ref2, payload) {
+    var commit = _ref2.commit,
+        dispatch = _ref2.dispatch;
+    return new Promise(function (resolve, reject) {
+      _http_requests_purchase_index__WEBPACK_IMPORTED_MODULE_0__["default"].getCreate().then(function (response) {
+        resolve(response);
+      }).catch(function (error) {
+        dispatch('handleError', {
+          reject: reject,
+          error: error
+        }, {
+          root: true
+        });
+      });
+    });
+  },
+  view: function view(_ref3, id) {
+    var commit = _ref3.commit,
+        dispatch = _ref3.dispatch;
+    return new Promise(function (resolve, reject) {
+      _http_requests_purchase_index__WEBPACK_IMPORTED_MODULE_0__["default"].view(id).then(function (response) {
+        resolve(response);
+      }).catch(function (error) {
+        dispatch('handleError', {
+          reject: reject,
+          error: error
+        }, {
+          root: true
+        });
+      });
+    });
+  },
+  create: function create(_ref4, payload) {
+    var commit = _ref4.commit,
+        dispatch = _ref4.dispatch;
+    return new Promise(function (resolve, reject) {
+      _http_requests_purchase_index__WEBPACK_IMPORTED_MODULE_0__["default"].create(payload).then(function (response) {
+        resolve(response);
+      }).catch(function (error) {
+        dispatch('handleError', {
+          reject: reject,
+          error: error
+        }, {
+          root: true
+        });
+      });
+    });
+  },
+  update: function update(_ref5, payload) {
+    var commit = _ref5.commit,
+        dispatch = _ref5.dispatch;
+    return new Promise(function (resolve, reject) {
+      _http_requests_purchase_index__WEBPACK_IMPORTED_MODULE_0__["default"].update(payload.id, payload.data).then(function (response) {
+        resolve(response);
+      }).catch(function (error) {
+        dispatch('handleError', {
+          reject: reject,
+          error: error
+        }, {
+          root: true
+        });
+      });
+    });
+  },
+  delete: function _delete(_ref6, id) {
+    var commit = _ref6.commit,
+        dispatch = _ref6.dispatch;
+    return new Promise(function (resolve, reject) {
+      _http_requests_purchase_index__WEBPACK_IMPORTED_MODULE_0__["default"].delete(id).then(function (response) {
+        resolve(response);
+      }).catch(function (error) {
+        dispatch('handleError', {
+          reject: reject,
+          error: error
+        }, {
+          root: true
+        });
+      });
+    });
+  }
+});
+
+/***/ }),
+
+/***/ "./resources/js/src/store/purchase/modulePurchaseGetters.js":
+/*!******************************************************************!*\
+  !*** ./resources/js/src/store/purchase/modulePurchaseGetters.js ***!
+  \******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({});
+
+/***/ }),
+
+/***/ "./resources/js/src/store/purchase/modulePurchaseMutations.js":
+/*!********************************************************************!*\
+  !*** ./resources/js/src/store/purchase/modulePurchaseMutations.js ***!
+  \********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({});
+
+/***/ }),
+
+/***/ "./resources/js/src/store/purchase/modulePurchaseState.js":
+/*!****************************************************************!*\
+  !*** ./resources/js/src/store/purchase/modulePurchaseState.js ***!
+  \****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
 
@@ -73639,7 +75124,7 @@ var is_touch_device = function is_touch_device() {
 
 
 var state = {
-  defaultPhoto: __webpack_require__(/*! @assets/images/portrait/small/avatar-s-11.jpg */ "./resources/assets/images/portrait/small/avatar-s-11.jpg"),
+  defaultPhoto: __webpack_require__(/*! @assets/images/portrait/small/images.png */ "./resources/assets/images/portrait/small/images.png"),
   bodyOverlay: false,
   isVerticalNavMenuActive: true,
   is_touch_device: is_touch_device(),
@@ -73681,7 +75166,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex_persist__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! vuex-persist */ "./node_modules/vuex-persist/dist/esm/index.js");
 /* harmony import */ var _auth_moduleAuth__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./auth/moduleAuth */ "./resources/js/src/store/auth/moduleAuth.js");
 /* harmony import */ var _user_moduleUser__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./user/moduleUser */ "./resources/js/src/store/user/moduleUser.js");
-/* harmony import */ var _roles_and_permissions_moduleRolesAndPermissions__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./roles-and-permissions/moduleRolesAndPermissions */ "./resources/js/src/store/roles-and-permissions/moduleRolesAndPermissions.js");
+/* harmony import */ var _project_moduleProject__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./project/moduleProject */ "./resources/js/src/store/project/moduleProject.js");
+/* harmony import */ var _customer_moduleCustomer__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./customer/moduleCustomer */ "./resources/js/src/store/customer/moduleCustomer.js");
+/* harmony import */ var _follow_up_moduleFollowUp__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./follow-up/moduleFollowUp */ "./resources/js/src/store/follow-up/moduleFollowUp.js");
+/* harmony import */ var _purchase_modulePurchase__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./purchase/modulePurchase */ "./resources/js/src/store/purchase/modulePurchase.js");
+/* harmony import */ var _roles_and_permissions_moduleRolesAndPermissions__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./roles-and-permissions/moduleRolesAndPermissions */ "./resources/js/src/store/roles-and-permissions/moduleRolesAndPermissions.js");
+/* harmony import */ var _apartment_moduleApartment__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./apartment/moduleApartment */ "./resources/js/src/store/apartment/moduleApartment.js");
 
 
 
@@ -73690,6 +75180,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__["default"]);
+
+
+
+
+
 
 
 
@@ -73704,7 +75199,12 @@ var vuexLocal = new vuex_persist__WEBPACK_IMPORTED_MODULE_6__["default"]({
   modules: {
     auth: _auth_moduleAuth__WEBPACK_IMPORTED_MODULE_7__["default"],
     user: _user_moduleUser__WEBPACK_IMPORTED_MODULE_8__["default"],
-    rolesAndPermissions: _roles_and_permissions_moduleRolesAndPermissions__WEBPACK_IMPORTED_MODULE_9__["default"]
+    project: _project_moduleProject__WEBPACK_IMPORTED_MODULE_9__["default"],
+    apartment: _apartment_moduleApartment__WEBPACK_IMPORTED_MODULE_14__["default"],
+    customer: _customer_moduleCustomer__WEBPACK_IMPORTED_MODULE_10__["default"],
+    followUp: _follow_up_moduleFollowUp__WEBPACK_IMPORTED_MODULE_11__["default"],
+    purchase: _purchase_modulePurchase__WEBPACK_IMPORTED_MODULE_12__["default"],
+    rolesAndPermissions: _roles_and_permissions_moduleRolesAndPermissions__WEBPACK_IMPORTED_MODULE_13__["default"]
   },
   plugins: [vuexLocal.plugin],
   strict: "development" !== 'production'
@@ -73961,9 +75461,9 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuesax__WEBPACK_IMPORTED_MODULE_1
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! D:\Work\Starter Pack\laravel 6\resources\js\app.js */"./resources/js/app.js");
-__webpack_require__(/*! D:\Work\Starter Pack\laravel 6\resources\sass\app.scss */"./resources/sass/app.scss");
-module.exports = __webpack_require__(/*! D:\Work\Starter Pack\laravel 6\resources\assets\css\main.css */"./resources/assets/css/main.css");
+__webpack_require__(/*! D:\Work\const\resources\js\app.js */"./resources/js/app.js");
+__webpack_require__(/*! D:\Work\const\resources\sass\app.scss */"./resources/sass/app.scss");
+module.exports = __webpack_require__(/*! D:\Work\const\resources\assets\css\main.css */"./resources/assets/css/main.css");
 
 
 /***/ })

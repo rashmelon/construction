@@ -20,6 +20,7 @@
             <feather-icon icon="UserIcon" svgClasses="w-4 h-4" />
             <span class="ml-2">Profile</span>
           </li>
+          </li>
 
           <vs-divider class="m-1" />
 
@@ -52,7 +53,7 @@ export default {
           return this.$store.getters['auth/userData'].email;
       },
       activeUserImg() {
-          return this.$store.getters['auth/userData'].image?`/storage/user/profile-picture/${this.$store.getters['auth/userData'].image}`:this.$store.getters.defaultPhoto;
+          return this.$store.getters.defaultPhoto;
       }
   },
   methods: {

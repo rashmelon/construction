@@ -1,6 +1,7 @@
 import store from '../store/store';
 
 export default {
+    'name': 'authCan',
     methods: {
         /**
          * Check if the authenticated user can perform an action.

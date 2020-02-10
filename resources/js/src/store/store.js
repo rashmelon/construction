@@ -12,7 +12,12 @@ Vue.use(Vuex);
 
 import moduleAuth from './auth/moduleAuth';
 import moduleUser from './user/moduleUser';
+import moduleProject from './project/moduleProject';
+import moduleCustomer from './customer/moduleCustomer';
+import moduleFollowUp from './follow-up/moduleFollowUp';
+import modulePurchase from './purchase/modulePurchase';
 import moduleRolesAndPermissions from './roles-and-permissions/moduleRolesAndPermissions';
+import moduleApartment from "./apartment/moduleApartment";
 
 
 const vuexLocal = new VuexPersistence({
@@ -27,6 +32,11 @@ export default new Vuex.Store({
     modules: {
         auth: moduleAuth,
         user: moduleUser,
+        project: moduleProject,
+        apartment: moduleApartment,
+        customer: moduleCustomer,
+        followUp: moduleFollowUp,
+        purchase: modulePurchase,
         rolesAndPermissions: moduleRolesAndPermissions,
     },
     plugins: [vuexLocal.plugin],

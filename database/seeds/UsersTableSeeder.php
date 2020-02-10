@@ -19,13 +19,6 @@ class UsersTableSeeder extends Seeder
                 'password' => bcrypt('password'),
                 'email_verified_at' => now(),
                 'remember_token' => Str::random(10),
-            ],
-            [
-                'name'              => 'Mohamed Swilam',
-                'email'             => 'm.swilam@equinesolutions.co',
-                'password'          => bcrypt('password'),
-                'email_verified_at' => now(),
-                'remember_token'    => Str::random(10),
             ]
         ];
 

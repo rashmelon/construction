@@ -37,3 +37,17 @@ Route::group(['prefix' => 'role', 'middleware' => 'auth:api'], function () {
 
 Route::middleware('auth:api')->get('permission', 'PermissionController@index');
 
+Route::group(['prefix' => 'project', 'middleware' => 'auth:api'], function () {
+    Route::post('{id}', 'ProjectController@update');
+    Route::get('{id}', 'ProjectController@show');
+    Route::delete('{id}', 'ProjectController@destroy');
+    Route::resource('', 'ProjectController');
+});
+
+Route::resource('apartment', 'ApartmentController');
+
+Route::resource('customer', 'CustomerController');
+
+Route::resource('follow-up', 'FollowUpController');
+
+Route::resource('purchase', 'PurchaseController');

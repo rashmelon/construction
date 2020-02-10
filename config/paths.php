@@ -1,9 +1,9 @@
 <?php
 
 return [
-    'user-image' => [
-        'create' => 'storage/user',
-        'get' => '/storage/user/',
-        'delete' => '/user/',
+    'image' => [
+        'create' => 'storage/images',
+        'get' => '/storage/images/',
+        'delete' => '/images/',
     ],
 ];

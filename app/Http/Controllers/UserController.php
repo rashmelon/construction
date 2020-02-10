@@ -26,7 +26,9 @@ class UserController extends Controller
 
         return ResponseFacade::indexRespond(
             fractal(
-                (new IndexResponse(User::with(['roles'])))->execute()
+                (new IndexResponse(User::whereHas('roles', function($query){
+                    $query->where('name', '!=', 'Super Admin');
+                })->with('roles')))->execute()
                 , new UserTransformer()
             )
         );
@@ -44,10 +46,6 @@ class UserController extends Controller
         $this->authorize('store', User::class);
 
         $data = $request->except('role');
-
-        if (\request()->hasFile('image')){
-            $data['image'] = download_file(\request()->file('image'), config('paths.user-image.create'));
-        }
 
         $data['email_verified_at'] = now();
         $data['password'] = bcrypt($request->password);
@@ -99,11 +97,6 @@ class UserController extends Controller
         $user = User::find($id);
         $data = $request->except('role');
 
-        if (\request()->hasFile('image')){
-            Storage::disk('public')->delete(config('paths.user-image.delete').$user->image);
-            $data['image'] = download_file(\request()->file('image'), config('paths.user-image.create'));
-        }
-
         if ($request->password){
             $data['password'] = bcrypt($data['password']);
         }
@@ -132,10 +125,6 @@ class UserController extends Controller
     public function destroy($id)
     {
         $this->authorize('destroy', User::class);
-
-        $user = User::find($id);
-
-        Storage::disk('public')->delete(config('paths.user-image.delete').$user->image);
 
         User::find($id)->delete();
 

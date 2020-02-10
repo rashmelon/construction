@@ -52,8 +52,8 @@ import VeeValidate from 'vee-validate';
 Vue.use(VeeValidate);
 
 // Import and use the auth mixin in all components.
-import AuthMixin from './mixins/auth.js';
-Vue.mixin(AuthMixin);
+import authCan from './mixins/auth.js';
+Vue.mixin(authCan);
 
 // Vue select css
 // Note: In latest version you have to add it separately
