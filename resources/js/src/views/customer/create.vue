@@ -5,6 +5,13 @@
 
                 <div class="vx-row">
                     <div class="vx-col sm:w-1/2 w-full mb-6">
+                        <vs-input type="email" name="email" :danger="errors.has('email')" val-icon-danger="clear" :danger-text="errors.first('email')"
+                                  class="w-full" icon-pack="feather" icon="icon-message-circle" label-placeholder="Email" v-model="form.email" />
+                    </div>
+                </div>
+
+                <div class="vx-row">
+                    <div class="vx-col sm:w-1/2 w-full mb-6">
                         <vs-input type="text" name="name" :danger="errors.has('name')" val-icon-danger="clear" :danger-text="errors.first('name')"
                                   class="w-full" icon-pack="feather" icon="icon-clipboard" label-placeholder="Name" v-model="form.name" />
                     </div>
@@ -50,6 +57,7 @@
         data: function () {
             return {
                 form: {
+                    email: '',
                     name: '',
                     phone: '',
                     birth_date: '',

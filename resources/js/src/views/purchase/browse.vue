@@ -2,7 +2,7 @@
     <div>
         <div class="vx-col w-full mb-base" v-if="can('browse-purchase')">
             <vx-card ref="apartment" title="Purchase List" collapse-action refreshContentAction @refresh="getPurchasesData">
-                <vs-table search :data="purchases">
+                <vs-table :data="purchases">
                     <template slot="header">
                         <vs-button size="small" to="/dashboard/purchase/create" icon-pack="feather" icon="icon-plus" type="filled">Create Purchase</vs-button>
                     </template>

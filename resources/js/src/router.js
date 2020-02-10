@@ -416,6 +416,20 @@ const router = new Router({
                     }
                 },
                 {
+                    path: '/dashboard/installment',
+                    name: 'installment',
+                    component: () => import('./views/installment/browse.vue'),
+                    beforeEnter: guard,
+                    meta: {
+                        breadcrumb: [
+                            { title: 'Home', url: '/dashboard', i18n: 'Home' },
+                            { title: 'Installment', active: true, i18n: 'Installment' },
+                        ],
+                        pageTitle: 'Installment',
+                        pageTitle_i18n: 'Installment',
+                    }
+                },
+                {
                     path: '/dashboard/settings/role',
                     name: 'role',
                     component: () => import('./views/settings/Role/Roles.vue'),

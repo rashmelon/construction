@@ -80,6 +80,24 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -92,6 +110,7 @@ __webpack_require__.r(__webpack_exports__);
       searchText: "",
       resultTime: 0,
       customers: [],
+      search: null,
       is_requesting: false
     };
   },
@@ -103,7 +122,13 @@ __webpack_require__.r(__webpack_exports__);
         container: this.$refs.browse,
         scale: 0.5
       });
-      this.$store.dispatch('customer/getData', '').then(function (response) {
+      var filter = '';
+
+      if (this.search) {
+        filter = "?search=".concat(this.search);
+      }
+
+      this.$store.dispatch('customer/getData', filter).then(function (response) {
         _this.$vs.loading.close(_this.$refs.browse);
 
         _this.customers = response.data.data.data;
@@ -302,10 +327,42 @@ var render = function() {
                 on: { refresh: _vm.getCustomersData }
               },
               [
+                _c("div", { staticClass: "vx-row" }, [
+                  _c(
+                    "div",
+                    { staticClass: "vx-col sm:w-1/2 w-full mb-6" },
+                    [
+                      _c("vs-input", {
+                        staticClass: "w-full",
+                        attrs: {
+                          type: "text",
+                          name: "search",
+                          "icon-pack": "feather",
+                          icon: "icon-search",
+                          "label-placeholder": "Search"
+                        },
+                        on: {
+                          change: function($event) {
+                            return _vm.getCustomersData()
+                          }
+                        },
+                        model: {
+                          value: _vm.search,
+                          callback: function($$v) {
+                            _vm.search = $$v
+                          },
+                          expression: "search"
+                        }
+                      })
+                    ],
+                    1
+                  )
+                ]),
+                _vm._v(" "),
                 _c(
                   "vs-table",
                   {
-                    attrs: { search: "", data: _vm.customers },
+                    attrs: { data: _vm.customers },
                     scopedSlots: _vm._u(
                       [
                         {
@@ -343,6 +400,18 @@ var render = function() {
                                   _vm._v(" "),
                                   _c(
                                     "vs-td",
+                                    { attrs: { data: customer.email } },
+                                    [
+                                      _vm._v(
+                                        "\n                            " +
+                                          _vm._s(customer.email) +
+                                          "\n                        "
+                                      )
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "vs-td",
                                     { attrs: { data: customer.phone } },
                                     [
                                       _vm._v(
@@ -372,6 +441,20 @@ var render = function() {
                                       _vm._v(
                                         "\n                            " +
                                           _vm._s(customer.birth_date) +
+                                          "\n                        "
+                                      )
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "vs-td",
+                                    { attrs: { data: customer.landing } },
+                                    [
+                                      _vm._v(
+                                        "\n                            " +
+                                          _vm._s(
+                                            customer.landing ? "Yes" : "No"
+                                          ) +
                                           "\n                        "
                                       )
                                     ]
@@ -474,7 +557,7 @@ var render = function() {
                       ],
                       null,
                       false,
-                      3038853412
+                      1713458863
                     )
                   },
                   [
@@ -512,6 +595,10 @@ var render = function() {
                         ]),
                         _vm._v(" "),
                         _c("vs-th", { attrs: { "sort-key": "display_name" } }, [
+                          _vm._v("Email")
+                        ]),
+                        _vm._v(" "),
+                        _c("vs-th", { attrs: { "sort-key": "display_name" } }, [
                           _vm._v("Phone")
                         ]),
                         _vm._v(" "),
@@ -521,6 +608,10 @@ var render = function() {
                         _vm._v(" "),
                         _c("vs-th", { attrs: { "sort-key": "display_name" } }, [
                           _vm._v("Birth Date")
+                        ]),
+                        _vm._v(" "),
+                        _c("vs-th", { attrs: { "sort-key": "display_name" } }, [
+                          _vm._v("Landing")
                         ]),
                         _vm._v(" "),
                         _c("vs-th", [_vm._v("Action")])

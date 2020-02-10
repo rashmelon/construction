@@ -14,6 +14,8 @@
 //Route::get('/{any}', 'ApplicationController')->where('any', '.*');
 
 Route::view('/', 'pages.home')->name('home');
+Route::post('/submit', 'web\\CustomerController@store');
+Route::view('/contact', 'pages.form')->name('form');
 
 Route::get('/dashboard', 'ApplicationController')->where('any', '.*');
 Route::get('/dashboard/{any}', 'ApplicationController')->where('any', '.*');

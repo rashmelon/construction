@@ -29,4 +29,9 @@ class FollowUp extends Model
     {
         return $query->where('important', 1);
     }
+
+    public function scopeStatus($query, $status)
+    {
+        return $query->where('status', $status);
+    }
 }

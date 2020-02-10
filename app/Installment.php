@@ -17,4 +17,9 @@ class Installment extends Model
     {
         return $query->where('purchase_id', $id);
     }
+
+    public function scopeToday($query)
+    {
+        return $query->where('date', today());
+    }
 }

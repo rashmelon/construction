@@ -21,8 +21,6 @@
         <span class="vx-logo-text text-primary">Vuexy</span>
       </router-link>
 
-      <search-bar />
-
       <notification-drop-down />
 
       <profile-drop-down />

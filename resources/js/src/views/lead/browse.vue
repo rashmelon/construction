@@ -1,8 +1,20 @@
 <template>
     <div>
         <div class="vx-col w-full mb-base" v-if="can('browse-follow-up')">
-            <vx-card ref="lead" title="Follow Up List" collapse-action refreshContentAction @refresh="getFollowUpsData">
-                <vs-table search :data="followUps">
+            <vx-card ref="lead" title="Lead List" collapse-action refreshContentAction @refresh="getFollowUpsData">
+                <div class="vx-row">
+                    <div class="vx-col sm:w-1/2 w-full mb-6">
+                        <v-select v-model="status" label="Status" :options="statuses" :dir="$vs.rtl ? 'rtl' : 'ltr'"/>
+                    </div>
+                    <vs-button @click="getFollowUpsData">Filter</vs-button>
+                </div>
+                <div class="vx-row">
+                    <div class="vx-col sm:w-1/2 w-full mb-6">
+                        <label for="important">Important</label>
+                        <input @change="getFollowUpsData" id="important" type="checkbox" name="important" v-model="important" />
+                    </div>
+                </div>
+                <vs-table :data="followUps">
                     <template slot="header">
                         <vs-button size="small" to="/dashboard/lead/create" icon-pack="feather" icon="icon-plus" type="filled">Create Lead</vs-button>
                     </template>
@@ -84,6 +96,8 @@
     import "@fortawesome/fontawesome-free/css/all.css"
     import "@fortawesome/fontawesome-free/js/all.js"
     import authCan from './../../mixins/auth'
+    import vSelect from 'vue-select';
+
     export default {
         name: "lead",
         mounted() {
@@ -91,12 +105,34 @@
                 this.getFollowUpsData();
             }
         },
+        components: {
+            'v-select': vSelect,
+        },
         data: function (){
             return {
                 searchText: "",
                 resultTime: 0,
                 followUps: [],
-                is_requesting: false
+                is_requesting: false,
+                important: false,
+                status: '',
+                statuses: [
+                    '',
+                    'Delay lead',
+                    'All lead',
+                    'Fresh lead',
+                    'Following today',
+                    'Following',
+                    'Meeting',
+                    'Reschedule meeting',
+                    'Following after meeting',
+                    'Done Deal',
+                    'Cancellation',
+                    'Wrong No',
+                    'Cancel after meeting',
+                    'Hold',
+                    'Done',
+                ],
             }
         },
         props: {
@@ -109,8 +145,29 @@
         },
         methods: {
             getFollowUpsData(){
+                console.log("hamada");
                 this.$vs.loading({container: this.$refs.browse, scale: 0.5});
-                this.$store.dispatch('followUp/getData', this.filter? this.filter:'')
+
+                let filter = this.filter;
+
+                if (this.important){
+                    if (filter){
+                        filter += '&important=true';
+                    }
+                    else{
+                        filter = '?important=true';
+                    }
+                }
+                if (this.status){
+                    if (filter || this.important){
+                        filter += `&status=${this.status}`;
+                    }
+                    else{
+                        filter = `?status=${this.status}`;
+                    }
+                }
+
+                this.$store.dispatch('followUp/getData', filter? filter:'')
                     .then(response => {
                         this.$vs.loading.close(this.$refs.browse);
                         this.followUps = response.data.data.data;

@@ -51,3 +51,5 @@ Route::resource('customer', 'CustomerController');
 Route::resource('follow-up', 'FollowUpController');
 
 Route::resource('purchase', 'PurchaseController');
+
+Route::resource('installment', 'InstallmentController');
