@@ -13,7 +13,6 @@
 
         <vs-spacer />
 
-        <search-bar />
 
 <!--        <notification-drop-down />-->
 

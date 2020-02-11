@@ -53,6 +53,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "add-customer",
@@ -62,6 +69,7 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       form: {
+        email: '',
         name: '',
         phone: '',
         birth_date: '',
@@ -211,6 +219,36 @@ var render = function() {
               "vx-card",
               { ref: "create", attrs: { title: "Customer Data" } },
               [
+                _c("div", { staticClass: "vx-row" }, [
+                  _c(
+                    "div",
+                    { staticClass: "vx-col sm:w-1/2 w-full mb-6" },
+                    [
+                      _c("vs-input", {
+                        staticClass: "w-full",
+                        attrs: {
+                          type: "email",
+                          name: "email",
+                          danger: _vm.errors.has("email"),
+                          "val-icon-danger": "clear",
+                          "danger-text": _vm.errors.first("email"),
+                          "icon-pack": "feather",
+                          icon: "icon-message-circle",
+                          "label-placeholder": "Email"
+                        },
+                        model: {
+                          value: _vm.form.email,
+                          callback: function($$v) {
+                            _vm.$set(_vm.form, "email", $$v)
+                          },
+                          expression: "form.email"
+                        }
+                      })
+                    ],
+                    1
+                  )
+                ]),
+                _vm._v(" "),
                 _c("div", { staticClass: "vx-row" }, [
                   _c(
                     "div",

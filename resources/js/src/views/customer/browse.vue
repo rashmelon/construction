@@ -2,16 +2,26 @@
     <div>
         <div class="vx-col w-full mb-base" v-if="can('browse-customer')">
             <vx-card ref="customer" title="customer List" collapse-action refreshContentAction @refresh="getCustomersData">
-                <vs-table search :data="customers">
+
+                <div class="vx-row">
+                    <div class="vx-col sm:w-1/2 w-full mb-6">
+                        <vs-input @change="getCustomersData()" type="text" name="search" class="w-full" icon-pack="feather" icon="icon-search" label-placeholder="Search" v-model="search" />
+                    </div>
+                </div>
+
+                <vs-table :data="customers">
                     <template slot="header">
                         <vs-button size="small" to="/dashboard/customer/create" icon-pack="feather" icon="icon-plus" type="filled">Create Customer</vs-button>
                     </template>
+
                     <template slot="thead">
                         <vs-th sort-key="id">ID</vs-th>
                         <vs-th sort-key="display_name">Name</vs-th>
+                        <vs-th sort-key="display_name">Email</vs-th>
                         <vs-th sort-key="display_name">Phone</vs-th>
                         <vs-th sort-key="display_name">Reference</vs-th>
                         <vs-th sort-key="display_name">Birth Date</vs-th>
+                        <vs-th sort-key="display_name">Landing</vs-th>
                         <vs-th>Action</vs-th>
                     </template>
                     <template slot-scope="{data}">
@@ -24,6 +34,10 @@
                                 {{ customer.name}}
                             </vs-td>
 
+                            <vs-td :data="customer.email">
+                                {{ customer.email}}
+                            </vs-td>
+
                             <vs-td :data="customer.phone">
                                 {{ customer.phone}}
                             </vs-td>
@@ -34,6 +48,10 @@
 
                             <vs-td :data="customer.birth_date">
                                 {{ customer.birth_date}}
+                            </vs-td>
+
+                            <vs-td :data="customer.landing">
+                                {{ customer.landing? "Yes":"No" }}
                             </vs-td>
 
                             <vs-td>
@@ -78,13 +96,18 @@
                 searchText: "",
                 resultTime: 0,
                 customers: [],
+                search: null,
                 is_requesting: false
             }
         },
         methods: {
             getCustomersData(){
                 this.$vs.loading({container: this.$refs.browse, scale: 0.5});
-                this.$store.dispatch('customer/getData', '')
+                var filter = '';
+                if (this.search){
+                    filter = `?search=${this.search}`
+                }
+                this.$store.dispatch('customer/getData', filter)
                     .then(response => {
                         this.$vs.loading.close(this.$refs.browse);
                         this.customers = response.data.data.data;

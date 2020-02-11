@@ -321,7 +321,7 @@ var render = function() {
                 _c(
                   "vs-table",
                   {
-                    attrs: { search: "", data: _vm.apartments },
+                    attrs: { data: _vm.apartments },
                     scopedSlots: _vm._u(
                       [
                         {

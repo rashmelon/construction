@@ -16,6 +16,7 @@ import moduleProject from './project/moduleProject';
 import moduleCustomer from './customer/moduleCustomer';
 import moduleFollowUp from './follow-up/moduleFollowUp';
 import modulePurchase from './purchase/modulePurchase';
+import moduleInstallment from './installment/moduleInstallment';
 import moduleRolesAndPermissions from './roles-and-permissions/moduleRolesAndPermissions';
 import moduleApartment from "./apartment/moduleApartment";
 
@@ -37,6 +38,7 @@ export default new Vuex.Store({
         customer: moduleCustomer,
         followUp: moduleFollowUp,
         purchase: modulePurchase,
+        installment: moduleInstallment,
         rolesAndPermissions: moduleRolesAndPermissions,
     },
     plugins: [vuexLocal.plugin],

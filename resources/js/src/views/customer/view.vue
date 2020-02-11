@@ -5,9 +5,12 @@
                 <vs-row v-if="customer">
                     <vs-row class="mb-2">
                         <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="12" class="m-2">
+                            <label for="email">Email: </label><span id="email">{{customer.email}}</span>
+                        </vs-col>
+                        <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="12" class="m-2">
                             <label for="name">Name: </label><span id="name">{{customer.name}}</span>
                         </vs-col>
-                            <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="12" class="m-2">
+                        <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="12" class="m-2">
                             <label for="phone">Phone: </label><span id="phone">{{customer.phone}}</span>
                         </vs-col>
                         <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="12" class="m-2">

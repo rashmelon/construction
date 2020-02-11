@@ -2,7 +2,7 @@
     <div>
         <div class="vx-col w-full mb-base" v-if="can('browse-apartment')">
             <vx-card ref="apartment" title="Apartment List" collapse-action refreshContentAction @refresh="getApartmentsData">
-                <vs-table search :data="apartments">
+                <vs-table :data="apartments">
                     <template slot="header">
                         <vs-button size="small" to="/dashboard/apartment/create" icon-pack="feather" icon="icon-plus" type="filled">Create Apartment</vs-button>
                     </template>

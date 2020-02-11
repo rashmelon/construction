@@ -9,69 +9,176 @@
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>@yield('title') {{ config('app.name', 'Constructiuon') }}</title>
-        <!-- favicon -->
-        <link rel=icon href="../../assets/images/website/favicon.png" sizes="20x20" type="image/png">
+        <title>@yield('title') {{ config('app.name', 'Construction') }}</title>
 
-        <!-- Additional plugin css -->
-        <link rel="stylesheet" href="{{ asset(mix('css/website/bootstrap.min.css'))}}">
-        <link rel="stylesheet" href="{{ asset(mix('css/website/animate.css'))}}">
-        <link rel="stylesheet" href="{{ asset(mix('css/website/magnific-popup.css'))}}">
-        <link rel="stylesheet" href="{{ asset(mix('css/website/owl.carousel.min.css'))}}">
-        <link rel="stylesheet" href="{{ asset(mix('css/website/slick.css'))}}">
-        <link rel="stylesheet" href="{{ asset(mix('css/website/swiper.min.css'))}}">
-        <link rel="stylesheet" href="{{ asset(mix('css/website/nice-select.css'))}}">
-        <link rel="stylesheet" href="{{ asset(mix('css/website/jquery-ui.min.css'))}}">
-        <!-- icons -->
-        <link rel="stylesheet" href="{{ asset(mix('css/website/font-awesome.min.css'))}}">
-        <link rel="stylesheet" href="{{ asset(mix('css/website/themify-icons.css'))}}">
-        <link rel="stylesheet" href="{{ asset(mix('css/website/line-awesome.min.css'))}}">
-        <!-- main css -->
-        <link rel="stylesheet" href="{{ asset(mix('css/website/style.css'))}}">
-        <!-- responsive css -->
-        <link rel="stylesheet" href="{{ asset(mix('css/website/responsive.css'))}}">
-        <script src="{{ asset(mix('js/website/jquery-2.2.4.min.js')) }}"></script>
+        <style>
+            @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,600,400italic);
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                -webkit-font-smoothing: antialiased;
+                -moz-font-smoothing: antialiased;
+                -o-font-smoothing: antialiased;
+                font-smoothing: antialiased;
+                text-rendering: optimizeLegibility;
+            }
+
+            body {
+                font-family: "Roboto", Helvetica, Arial, sans-serif;
+                font-weight: 100;
+                font-size: 12px;
+                line-height: 30px;
+                color: #777;
+                background: #4CAF50;
+            }
+
+            .container {
+                max-width: 400px;
+                width: 100%;
+                margin: 0 auto;
+                position: relative;
+            }
+
+            .container-2 {
+                max-width: 960px;
+                width: 100%;
+                margin: 0 auto;
+                position: relative;
+            }
+
+            .container-2 h1{
+                text-align: center;
+                margin-top: 200px;
+                font-size: 36px;
+                color: #fff;
+            }
+
+            #contact input[type="text"],
+            #contact input[type="email"],
+            #contact input[type="tel"],
+            #contact input[type="url"],
+            #contact textarea,
+            #contact button[type="submit"] {
+                font: 400 12px/16px "Roboto", Helvetica, Arial, sans-serif;
+            }
+
+            #contact {
+                background: #F9F9F9;
+                padding: 25px;
+                margin: 150px 0;
+                box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+            }
+
+            #contact h3 {
+                display: block;
+                font-size: 30px;
+                font-weight: 300;
+                margin-bottom: 10px;
+            }
+
+            #contact h4 {
+                margin: 5px 0 15px;
+                display: block;
+                font-size: 13px;
+                font-weight: 400;
+            }
+
+            fieldset {
+                border: medium none !important;
+                margin: 0 0 10px;
+                min-width: 100%;
+                padding: 0;
+                width: 100%;
+            }
+
+            #contact input[type="text"],
+            #contact input[type="email"],
+            #contact input[type="tel"],
+            #contact input[type="url"],
+            #contact textarea {
+                width: 100%;
+                border: 1px solid #ccc;
+                background: #FFF;
+                margin: 0 0 5px;
+                padding: 10px;
+            }
+
+            #contact input[type="text"]:hover,
+            #contact input[type="email"]:hover,
+            #contact input[type="tel"]:hover,
+            #contact input[type="url"]:hover,
+            #contact textarea:hover {
+                -webkit-transition: border-color 0.3s ease-in-out;
+                -moz-transition: border-color 0.3s ease-in-out;
+                transition: border-color 0.3s ease-in-out;
+                border: 1px solid #aaa;
+            }
+
+            #contact textarea {
+                height: 100px;
+                max-width: 100%;
+                resize: none;
+            }
+
+            #contact button[type="submit"] {
+                cursor: pointer;
+                width: 100%;
+                border: none;
+                background: #4CAF50;
+                color: #FFF;
+                margin: 0 0 5px;
+                padding: 10px;
+                font-size: 15px;
+            }
+
+            #contact button[type="submit"]:hover {
+                background: #43A047;
+                -webkit-transition: background 0.3s ease-in-out;
+                -moz-transition: background 0.3s ease-in-out;
+                transition: background-color 0.3s ease-in-out;
+            }
+
+            #contact button[type="submit"]:active {
+                box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+            }
+
+            .copyright {
+                text-align: center;
+            }
+
+            #contact input:focus,
+            #contact textarea:focus {
+                outline: 0;
+                border: 1px solid #aaa;
+            }
+
+            ::-webkit-input-placeholder {
+                color: #888;
+            }
+
+            :-moz-placeholder {
+                color: #888;
+            }
+
+            ::-moz-placeholder {
+                color: #888;
+            }
+
+            :-ms-input-placeholder {
+                color: #888;
+            }
+        </style>
     </head>
     <body>
 
         <div id="app">
-            <!-- LOADER
-            ====================================================== -->
-            @include('partials.loader')
-
-            <!-- HEADER NAVBAR
-            ======================================================-->
-            @include('partials.navbar')
-
-            <!-- PAGE CONTENT
-            ======================================================-->
             <div class="page-wrappers">
-
                 @yield('content')
-
-                <!-- FOOTER
-                ======================================================-->
-                @include('partials.footer')
             </div>
         </div>
-
-        <!-- Additional plugin js -->
-        <script src="{{ asset(mix('js/website/popper.min.js')) }}"></script>
-        <script src="{{ asset(mix('js/website/bootstrap.min.js')) }}"></script>
-        <script src="{{ asset(mix('js/website/jquery.magnific-popup.js')) }}"></script>
-        <script src="{{ asset(mix('js/website/owl.carousel.min.js')) }}"></script>
-        <script src="{{ asset(mix('js/website/wow.min.js')) }}"></script>
-        <script src="{{ asset(mix('js/website/slick.js')) }}"></script>
-        <script src="{{ asset(mix('js/website/waypoints.min.js')) }}"></script>
-        <script src="{{ asset(mix('js/website/jquery.counterup.min.js')) }}"></script>
-        <script src="{{ asset(mix('js/website/imagesloaded.pkgd.min.js')) }}"></script>
-        <script src="{{ asset(mix('js/website/isotope.pkgd.min.js')) }}"></script>
-        <script src="{{ asset(mix('js/website/swiper.min.js')) }}"></script>
-        <script src="{{ asset(mix('js/website/jquery.nice-select.min.js')) }}"></script>
-        <script src="{{ asset(mix('js/website/jquery-ui.min.js')) }}"></script>/
-
-        <!-- main js -->
-        <script src="{{ asset(mix('js/website/main.js')) }}"></script>
 
     </body>
 </html>

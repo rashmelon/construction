@@ -24,10 +24,12 @@ class CustomerRequest extends FormRequest
     public function rules()
     {
         return [
+            'email' => '',
             'name' => '',
             'phone' => '',
             'birth_date' => '',
-            'reference' => ''
+            'reference' => '',
+            'landing' => ''
         ];
     }
 }

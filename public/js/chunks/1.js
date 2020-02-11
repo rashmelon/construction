@@ -14,6 +14,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _fortawesome_fontawesome_free_js_all_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @fortawesome/fontawesome-free/js/all.js */ "./node_modules/@fortawesome/fontawesome-free/js/all.js");
 /* harmony import */ var _fortawesome_fontawesome_free_js_all_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_fortawesome_fontawesome_free_js_all_js__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _mixins_auth__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../../mixins/auth */ "./resources/js/src/mixins/auth.js");
+/* harmony import */ var vue_select__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vue-select */ "./node_modules/vue-select/dist/vue-select.js");
+/* harmony import */ var vue_select__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(vue_select__WEBPACK_IMPORTED_MODULE_3__);
 //
 //
 //
@@ -96,6 +98,19 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 
 
 
@@ -106,12 +121,18 @@ __webpack_require__.r(__webpack_exports__);
       this.getFollowUpsData();
     }
   },
+  components: {
+    'v-select': vue_select__WEBPACK_IMPORTED_MODULE_3___default.a
+  },
   data: function data() {
     return {
       searchText: "",
       resultTime: 0,
       followUps: [],
-      is_requesting: false
+      is_requesting: false,
+      important: false,
+      status: '',
+      statuses: ['', 'Delay lead', 'All lead', 'Fresh lead', 'Following today', 'Following', 'Meeting', 'Reschedule meeting', 'Following after meeting', 'Done Deal', 'Cancellation', 'Wrong No', 'Cancel after meeting', 'Hold', 'Done']
     };
   },
   props: {
@@ -126,11 +147,30 @@ __webpack_require__.r(__webpack_exports__);
     getFollowUpsData: function getFollowUpsData() {
       var _this = this;
 
+      console.log("hamada");
       this.$vs.loading({
         container: this.$refs.browse,
         scale: 0.5
       });
-      this.$store.dispatch('followUp/getData', this.filter ? this.filter : '').then(function (response) {
+      var filter = this.filter;
+
+      if (this.important) {
+        if (filter) {
+          filter += '&important=true';
+        } else {
+          filter = '?important=true';
+        }
+      }
+
+      if (this.status) {
+        if (filter || this.important) {
+          filter += "&status=".concat(this.status);
+        } else {
+          filter = "?status=".concat(this.status);
+        }
+      }
+
+      this.$store.dispatch('followUp/getData', filter ? filter : '').then(function (response) {
         _this.$vs.loading.close(_this.$refs.browse);
 
         _this.followUps = response.data.data.data;
@@ -322,7 +362,7 @@ var render = function() {
               {
                 ref: "lead",
                 attrs: {
-                  title: "Follow Up List",
+                  title: "Lead List",
                   "collapse-action": "",
                   refreshContentAction: ""
                 },
@@ -330,9 +370,95 @@ var render = function() {
               },
               [
                 _c(
+                  "div",
+                  { staticClass: "vx-row" },
+                  [
+                    _c(
+                      "div",
+                      { staticClass: "vx-col sm:w-1/2 w-full mb-6" },
+                      [
+                        _c("v-select", {
+                          attrs: {
+                            label: "Status",
+                            options: _vm.statuses,
+                            dir: _vm.$vs.rtl ? "rtl" : "ltr"
+                          },
+                          model: {
+                            value: _vm.status,
+                            callback: function($$v) {
+                              _vm.status = $$v
+                            },
+                            expression: "status"
+                          }
+                        })
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c("vs-button", { on: { click: _vm.getFollowUpsData } }, [
+                      _vm._v("Filter")
+                    ])
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c("div", { staticClass: "vx-row" }, [
+                  _c("div", { staticClass: "vx-col sm:w-1/2 w-full mb-6" }, [
+                    _c("label", { attrs: { for: "important" } }, [
+                      _vm._v("Important")
+                    ]),
+                    _vm._v(" "),
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.important,
+                          expression: "important"
+                        }
+                      ],
+                      attrs: {
+                        id: "important",
+                        type: "checkbox",
+                        name: "important"
+                      },
+                      domProps: {
+                        checked: Array.isArray(_vm.important)
+                          ? _vm._i(_vm.important, null) > -1
+                          : _vm.important
+                      },
+                      on: {
+                        change: [
+                          function($event) {
+                            var $$a = _vm.important,
+                              $$el = $event.target,
+                              $$c = $$el.checked ? true : false
+                            if (Array.isArray($$a)) {
+                              var $$v = null,
+                                $$i = _vm._i($$a, $$v)
+                              if ($$el.checked) {
+                                $$i < 0 && (_vm.important = $$a.concat([$$v]))
+                              } else {
+                                $$i > -1 &&
+                                  (_vm.important = $$a
+                                    .slice(0, $$i)
+                                    .concat($$a.slice($$i + 1)))
+                              }
+                            } else {
+                              _vm.important = $$c
+                            }
+                          },
+                          _vm.getFollowUpsData
+                        ]
+                      }
+                    })
+                  ])
+                ]),
+                _vm._v(" "),
+                _c(
                   "vs-table",
                   {
-                    attrs: { search: "", data: _vm.followUps },
+                    attrs: { data: _vm.followUps },
                     scopedSlots: _vm._u(
                       [
                         {

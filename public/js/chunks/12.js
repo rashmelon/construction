@@ -38,6 +38,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -171,6 +174,27 @@ var render = function() {
                           "vs-row",
                           { staticClass: "mb-2" },
                           [
+                            _c(
+                              "vs-col",
+                              {
+                                staticClass: "m-2",
+                                attrs: {
+                                  "vs-type": "flex",
+                                  "vs-justify": "center",
+                                  "vs-align": "center",
+                                  "vs-w": "12"
+                                }
+                              },
+                              [
+                                _c("label", { attrs: { for: "email" } }, [
+                                  _vm._v("Email: ")
+                                ]),
+                                _c("span", { attrs: { id: "email" } }, [
+                                  _vm._v(_vm._s(_vm.customer.email))
+                                ])
+                              ]
+                            ),
+                            _vm._v(" "),
                             _c(
                               "vs-col",
                               {
