@@ -2,7 +2,7 @@
     <div>
         <div class="vx-col w-full mb-base" v-if="can('browse-project')">
             <vx-card ref="projects" title="Projects List" collapse-action refreshContentAction @refresh="getProjectsData">
-                <vs-table search :data="projects">
+                <vs-table :data="projects">
                     <template slot="header">
                         <vs-button size="small" to="/dashboard/project/create" icon-pack="feather" icon="icon-plus" type="filled">Create Project</vs-button>
                     </template>

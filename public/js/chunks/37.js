@@ -1,9 +1,9 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[37],{
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/purchase/browse.vue?vue&type=script&lang=js&":
-/*!*************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/purchase/browse.vue?vue&type=script&lang=js& ***!
-  \*************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/installment/browse.vue?vue&type=script&lang=js&":
+/*!****************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/installment/browse.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -50,54 +50,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "purchase",
+  name: "installment",
   mounted: function mounted() {
-    this.getPurchasesData();
+    this.getInstallmentData();
   },
   props: {
-    'apartment': {
-      required: false
-    },
-    'customer': {
-      required: false
-    },
     'filter': {
       required: false
     }
@@ -106,78 +66,28 @@ __webpack_require__.r(__webpack_exports__);
     return {
       searchText: "",
       resultTime: 0,
-      purchases: [],
+      installments: [],
       is_requesting: false
     };
   },
   methods: {
-    getPurchasesData: function getPurchasesData() {
+    getInstallmentData: function getInstallmentData() {
       var _this = this;
 
       this.$vs.loading({
         container: this.$refs.browse,
         scale: 0.5
       });
-      this.$store.dispatch('purchase/getData', this.filter ? this.filter : '').then(function (response) {
+      this.$store.dispatch('installment/getData', this.filter ? this.filter : '').then(function (response) {
         _this.$vs.loading.close(_this.$refs.browse);
 
-        _this.purchases = response.data.data.data;
+        _this.installments = response.data.data.data;
       }).catch(function (error) {
         console.log(error);
 
         _this.$vs.loading.close(_this.$refs.browse);
 
         _this.$vs.notify({
-          title: 'Error',
-          text: error.response.data.error,
-          iconPack: 'feather',
-          icon: 'icon-alert-circle',
-          color: 'danger'
-        });
-      });
-    },
-    confirmDeletePurchase: function confirmDeletePurchase(type) {
-      this.$vs.dialog({
-        type: 'confirm',
-        color: 'danger',
-        title: "Are you sure!",
-        text: 'This data can not be retrieved again.',
-        accept: this.deletePurchase,
-        parameters: [type]
-      });
-    },
-    deletePurchase: function deletePurchase(params) {
-      var _this2 = this;
-
-      this.is_requesting = true;
-      this.$vs.loading({
-        container: "#btn-delete-".concat(params[0].id),
-        color: 'danger',
-        scale: 0.45
-      });
-      this.$store.dispatch('purchase/delete', params[0].id).then(function (response) {
-        _this2.is_requesting = false;
-
-        _this2.$vs.loading.close("#btn-delete-".concat(params[0].id, " > .con-vs-loading"));
-
-        _this2.purchases = _this2.purchases.filter(function (type) {
-          return type.id !== params[0].id;
-        });
-
-        _this2.$vs.notify({
-          title: 'Success',
-          text: response.data.message,
-          iconPack: 'feather',
-          icon: 'icon-check',
-          color: 'success'
-        });
-      }).catch(function (error) {
-        console.log(error);
-        _this2.is_requesting = false;
-
-        _this2.$vs.loading.close("#btn-delete-".concat(params[0].id, " > .con-vs-loading"));
-
-        _this2.$vs.notify({
           title: 'Error',
           text: error.response.data.error,
           iconPack: 'feather',
@@ -235,10 +145,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/purchase/browse.vue?vue&type=style&index=0&lang=css&":
-/*!********************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader??ref--7-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/purchase/browse.vue?vue&type=style&index=0&lang=css& ***!
-  \********************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/installment/browse.vue?vue&type=style&index=0&lang=css&":
+/*!***********************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--7-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/installment/browse.vue?vue&type=style&index=0&lang=css& ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -254,15 +164,15 @@ exports.push([module.i, ".txt-hover:hover{\n  color: black !important;\n}[dir] .
 
 /***/ }),
 
-/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/purchase/browse.vue?vue&type=style&index=0&lang=css&":
-/*!************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/style-loader!./node_modules/css-loader??ref--7-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/purchase/browse.vue?vue&type=style&index=0&lang=css& ***!
-  \************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/installment/browse.vue?vue&type=style&index=0&lang=css&":
+/*!***************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader??ref--7-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/installment/browse.vue?vue&type=style&index=0&lang=css& ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(/*! !../../../../../node_modules/css-loader??ref--7-1!../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../node_modules/postcss-loader/src??ref--7-2!../../../../../node_modules/vue-loader/lib??vue-loader-options!./browse.vue?vue&type=style&index=0&lang=css& */ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/purchase/browse.vue?vue&type=style&index=0&lang=css&");
+var content = __webpack_require__(/*! !../../../../../node_modules/css-loader??ref--7-1!../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../node_modules/postcss-loader/src??ref--7-2!../../../../../node_modules/vue-loader/lib??vue-loader-options!./browse.vue?vue&type=style&index=0&lang=css& */ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/installment/browse.vue?vue&type=style&index=0&lang=css&");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -284,10 +194,10 @@ if(false) {}
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/purchase/browse.vue?vue&type=template&id=09a8f53e&":
-/*!*****************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/purchase/browse.vue?vue&type=template&id=09a8f53e& ***!
-  \*****************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/installment/browse.vue?vue&type=template&id=d95f3f2c&":
+/*!********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/installment/browse.vue?vue&type=template&id=d95f3f2c& ***!
+  \********************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -300,41 +210,36 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _vm.can("browse-purchase")
-      ? _c(
-          "div",
-          { staticClass: "vx-col w-full mb-base" },
+    _c(
+      "div",
+      { staticClass: "vx-col w-full mb-base" },
+      [
+        _c(
+          "vx-card",
+          {
+            ref: "view",
+            attrs: { title: "Installment Data", collapseAction: "" }
+          },
           [
-            _c(
-              "vx-card",
-              {
-                ref: "apartment",
-                attrs: {
-                  title: "Purchase List",
-                  "collapse-action": "",
-                  refreshContentAction: ""
-                },
-                on: { refresh: _vm.getPurchasesData }
-              },
-              [
-                _c(
+            _vm.installments
+              ? _c(
                   "vs-table",
                   {
-                    attrs: { search: "", data: _vm.purchases },
+                    attrs: { data: _vm.installments },
                     scopedSlots: _vm._u(
                       [
                         {
                           key: "default",
                           fn: function(ref) {
                             var data = ref.data
-                            return _vm._l(data, function(purchase, index) {
+                            return _vm._l(data, function(installment, index) {
                               return _c(
                                 "vs-tr",
                                 { key: index },
                                 [
                                   _c(
                                     "vs-td",
-                                    { attrs: { data: purchase.id } },
+                                    { attrs: { data: installment.id } },
                                     [
                                       _vm._v(
                                         "\n                            " +
@@ -344,75 +249,14 @@ var render = function() {
                                     ]
                                   ),
                                   _vm._v(" "),
-                                  !_vm.customer
-                                    ? _c(
-                                        "vs-td",
-                                        { attrs: { data: purchase.customer } },
-                                        [
-                                          purchase.customer
-                                            ? _c("span", [
-                                                _vm._v(
-                                                  "\n                                " +
-                                                    _vm._s(
-                                                      purchase.customer.name
-                                                    ) +
-                                                    "\n                            "
-                                                )
-                                              ])
-                                            : _vm._e()
-                                        ]
-                                      )
-                                    : _vm._e(),
-                                  _vm._v(" "),
-                                  !_vm.apartment
-                                    ? _c(
-                                        "vs-td",
-                                        { attrs: { data: purchase.apartment } },
-                                        [
-                                          purchase.apartment
-                                            ? _c("span", [
-                                                _vm._v(
-                                                  "\n                                " +
-                                                    _vm._s(
-                                                      purchase.apartment.project
-                                                        .name
-                                                    ) +
-                                                    " " +
-                                                    _vm._s(
-                                                      purchase.apartment.floor
-                                                    ) +
-                                                    " - " +
-                                                    _vm._s(
-                                                      purchase.apartment.area
-                                                    ) +
-                                                    "\n                            "
-                                                )
-                                              ])
-                                            : _vm._e()
-                                        ]
-                                      )
-                                    : _vm._e(),
-                                  _vm._v(" "),
                                   _c(
                                     "vs-td",
-                                    { attrs: { data: purchase.end_date } },
-                                    [
-                                      _vm._v(
-                                        "\n                            " +
-                                          _vm._s(purchase.end_date) +
-                                          "\n                        "
-                                      )
-                                    ]
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "vs-td",
-                                    { attrs: { data: purchase.finished } },
+                                    { attrs: { data: installment.purchase } },
                                     [
                                       _vm._v(
                                         "\n                            " +
                                           _vm._s(
-                                            purchase.finished ? "yes" : "no"
+                                            installment.purchase.customer.name
                                           ) +
                                           "\n                        "
                                       )
@@ -421,91 +265,38 @@ var render = function() {
                                   _vm._v(" "),
                                   _c(
                                     "vs-td",
+                                    { attrs: { data: installment.amount } },
                                     [
-                                      _c("vs-row", [
-                                        _c(
-                                          "div",
-                                          { staticClass: "flex mb-4" },
-                                          [
-                                            _c(
-                                              "div",
-                                              { staticClass: "w-1/3" },
-                                              [
-                                                _c("vs-button", {
-                                                  attrs: {
-                                                    to:
-                                                      "/dashboard/purchase/" +
-                                                      purchase.id,
-                                                    radius: "",
-                                                    color: "primary",
-                                                    type: "border",
-                                                    "icon-pack": "feather",
-                                                    icon: "icon-eye"
-                                                  }
-                                                })
-                                              ],
-                                              1
-                                            ),
-                                            _vm._v(" "),
-                                            _c(
-                                              "div",
-                                              { staticClass: "w-1/3 ml-5" },
-                                              [
-                                                _c("vs-button", {
-                                                  attrs: {
-                                                    to:
-                                                      "/dashboard/purchase/" +
-                                                      purchase.id +
-                                                      "/edit",
-                                                    radius: "",
-                                                    color: "warning",
-                                                    type: "border",
-                                                    "icon-pack": "feather",
-                                                    icon: "icon-edit"
-                                                  }
-                                                })
-                                              ],
-                                              1
-                                            ),
-                                            _vm._v(" "),
-                                            _c(
-                                              "div",
-                                              { staticClass: "w-1/3 ml-5" },
-                                              [
-                                                _c("vs-button", {
-                                                  staticClass:
-                                                    "vs-con-loading__container",
-                                                  attrs: {
-                                                    id:
-                                                      "btn-delete-" +
-                                                      purchase.id,
-                                                    radius: "",
-                                                    color: "danger",
-                                                    type: "border",
-                                                    "icon-pack": "feather",
-                                                    icon: "icon-trash"
-                                                  },
-                                                  on: {
-                                                    click: function($event) {
-                                                      _vm.is_requesting
-                                                        ? _vm.$store.dispatch(
-                                                            "viewWaitMessage",
-                                                            _vm.$vs
-                                                          )
-                                                        : _vm.confirmDeletePurchase(
-                                                            purchase
-                                                          )
-                                                    }
-                                                  }
-                                                })
-                                              ],
-                                              1
-                                            )
-                                          ]
-                                        )
-                                      ])
-                                    ],
-                                    1
+                                      _vm._v(
+                                        "\n                            " +
+                                          _vm._s(installment.amount) +
+                                          "\n                        "
+                                      )
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "vs-td",
+                                    { attrs: { data: installment.date } },
+                                    [
+                                      _vm._v(
+                                        "\n                            " +
+                                          _vm._s(installment.date) +
+                                          "\n                        "
+                                      )
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "vs-td",
+                                    { attrs: { data: installment.paid_at } },
+                                    [
+                                      _vm._v(
+                                        "\n                            " +
+                                          _vm._s(installment.paid_at) +
+                                          "\n                        "
+                                      )
+                                    ]
                                   )
                                 ],
                                 1
@@ -516,31 +307,10 @@ var render = function() {
                       ],
                       null,
                       false,
-                      2825068697
+                      1112573599
                     )
                   },
                   [
-                    _c(
-                      "template",
-                      { slot: "header" },
-                      [
-                        _c(
-                          "vs-button",
-                          {
-                            attrs: {
-                              size: "small",
-                              to: "/dashboard/purchase/create",
-                              "icon-pack": "feather",
-                              icon: "icon-plus",
-                              type: "filled"
-                            }
-                          },
-                          [_vm._v("Create Purchase")]
-                        )
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
                     _c(
                       "template",
                       { slot: "thead" },
@@ -549,44 +319,34 @@ var render = function() {
                           _vm._v("ID")
                         ]),
                         _vm._v(" "),
-                        !_vm.customer
-                          ? _c(
-                              "vs-th",
-                              { attrs: { "sort-key": "display_name" } },
-                              [_vm._v("Customer Name")]
-                            )
-                          : _vm._e(),
-                        _vm._v(" "),
-                        !_vm.apartment
-                          ? _c(
-                              "vs-th",
-                              { attrs: { "sort-key": "display_name" } },
-                              [_vm._v("Apartment")]
-                            )
-                          : _vm._e(),
-                        _vm._v(" "),
                         _c("vs-th", { attrs: { "sort-key": "display_name" } }, [
-                          _vm._v("End Date")
+                          _vm._v("Customer")
                         ]),
                         _vm._v(" "),
                         _c("vs-th", { attrs: { "sort-key": "display_name" } }, [
-                          _vm._v("Finished")
+                          _vm._v("Amount")
                         ]),
                         _vm._v(" "),
-                        _c("vs-th", [_vm._v("Action")])
+                        _c("vs-th", { attrs: { "sort-key": "display_name" } }, [
+                          _vm._v("Date")
+                        ]),
+                        _vm._v(" "),
+                        _c("vs-th", { attrs: { "sort-key": "display_name" } }, [
+                          _vm._v("Paid At")
+                        ])
                       ],
                       1
                     )
                   ],
                   2
                 )
-              ],
-              1
-            )
+              : _vm._e()
           ],
           1
         )
-      : _vm._e()
+      ],
+      1
+    )
   ])
 }
 var staticRenderFns = []
@@ -596,18 +356,18 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./resources/js/src/views/purchase/browse.vue":
-/*!****************************************************!*\
-  !*** ./resources/js/src/views/purchase/browse.vue ***!
-  \****************************************************/
+/***/ "./resources/js/src/views/installment/browse.vue":
+/*!*******************************************************!*\
+  !*** ./resources/js/src/views/installment/browse.vue ***!
+  \*******************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _browse_vue_vue_type_template_id_09a8f53e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./browse.vue?vue&type=template&id=09a8f53e& */ "./resources/js/src/views/purchase/browse.vue?vue&type=template&id=09a8f53e&");
-/* harmony import */ var _browse_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./browse.vue?vue&type=script&lang=js& */ "./resources/js/src/views/purchase/browse.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _browse_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./browse.vue?vue&type=style&index=0&lang=css& */ "./resources/js/src/views/purchase/browse.vue?vue&type=style&index=0&lang=css&");
+/* harmony import */ var _browse_vue_vue_type_template_id_d95f3f2c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./browse.vue?vue&type=template&id=d95f3f2c& */ "./resources/js/src/views/installment/browse.vue?vue&type=template&id=d95f3f2c&");
+/* harmony import */ var _browse_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./browse.vue?vue&type=script&lang=js& */ "./resources/js/src/views/installment/browse.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _browse_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./browse.vue?vue&type=style&index=0&lang=css& */ "./resources/js/src/views/installment/browse.vue?vue&type=style&index=0&lang=css&");
 /* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -619,8 +379,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
   _browse_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _browse_vue_vue_type_template_id_09a8f53e___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _browse_vue_vue_type_template_id_09a8f53e___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _browse_vue_vue_type_template_id_d95f3f2c___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _browse_vue_vue_type_template_id_d95f3f2c___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
   null,
@@ -630,54 +390,54 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "resources/js/src/views/purchase/browse.vue"
+component.options.__file = "resources/js/src/views/installment/browse.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
-/***/ "./resources/js/src/views/purchase/browse.vue?vue&type=script&lang=js&":
-/*!*****************************************************************************!*\
-  !*** ./resources/js/src/views/purchase/browse.vue?vue&type=script&lang=js& ***!
-  \*****************************************************************************/
+/***/ "./resources/js/src/views/installment/browse.vue?vue&type=script&lang=js&":
+/*!********************************************************************************!*\
+  !*** ./resources/js/src/views/installment/browse.vue?vue&type=script&lang=js& ***!
+  \********************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_browse_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../node_modules/vue-loader/lib??vue-loader-options!./browse.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/purchase/browse.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_browse_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../node_modules/vue-loader/lib??vue-loader-options!./browse.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/installment/browse.vue?vue&type=script&lang=js&");
 /* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_browse_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
-/***/ "./resources/js/src/views/purchase/browse.vue?vue&type=style&index=0&lang=css&":
-/*!*************************************************************************************!*\
-  !*** ./resources/js/src/views/purchase/browse.vue?vue&type=style&index=0&lang=css& ***!
-  \*************************************************************************************/
+/***/ "./resources/js/src/views/installment/browse.vue?vue&type=style&index=0&lang=css&":
+/*!****************************************************************************************!*\
+  !*** ./resources/js/src/views/installment/browse.vue?vue&type=style&index=0&lang=css& ***!
+  \****************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_7_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_vue_loader_lib_index_js_vue_loader_options_browse_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/style-loader!../../../../../node_modules/css-loader??ref--7-1!../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../node_modules/postcss-loader/src??ref--7-2!../../../../../node_modules/vue-loader/lib??vue-loader-options!./browse.vue?vue&type=style&index=0&lang=css& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/purchase/browse.vue?vue&type=style&index=0&lang=css&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_7_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_vue_loader_lib_index_js_vue_loader_options_browse_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/style-loader!../../../../../node_modules/css-loader??ref--7-1!../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../node_modules/postcss-loader/src??ref--7-2!../../../../../node_modules/vue-loader/lib??vue-loader-options!./browse.vue?vue&type=style&index=0&lang=css& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/installment/browse.vue?vue&type=style&index=0&lang=css&");
 /* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_7_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_vue_loader_lib_index_js_vue_loader_options_browse_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_7_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_vue_loader_lib_index_js_vue_loader_options_browse_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__);
 /* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_7_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_vue_loader_lib_index_js_vue_loader_options_browse_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_7_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_vue_loader_lib_index_js_vue_loader_options_browse_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
  /* harmony default export */ __webpack_exports__["default"] = (_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_7_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_vue_loader_lib_index_js_vue_loader_options_browse_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
 
 /***/ }),
 
-/***/ "./resources/js/src/views/purchase/browse.vue?vue&type=template&id=09a8f53e&":
-/*!***********************************************************************************!*\
-  !*** ./resources/js/src/views/purchase/browse.vue?vue&type=template&id=09a8f53e& ***!
-  \***********************************************************************************/
+/***/ "./resources/js/src/views/installment/browse.vue?vue&type=template&id=d95f3f2c&":
+/*!**************************************************************************************!*\
+  !*** ./resources/js/src/views/installment/browse.vue?vue&type=template&id=d95f3f2c& ***!
+  \**************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_browse_vue_vue_type_template_id_09a8f53e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib??vue-loader-options!./browse.vue?vue&type=template&id=09a8f53e& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/purchase/browse.vue?vue&type=template&id=09a8f53e&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_browse_vue_vue_type_template_id_09a8f53e___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_browse_vue_vue_type_template_id_d95f3f2c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib??vue-loader-options!./browse.vue?vue&type=template&id=d95f3f2c& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/installment/browse.vue?vue&type=template&id=d95f3f2c&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_browse_vue_vue_type_template_id_d95f3f2c___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_browse_vue_vue_type_template_id_09a8f53e___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_browse_vue_vue_type_template_id_d95f3f2c___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
