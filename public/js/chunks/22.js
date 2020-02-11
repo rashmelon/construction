@@ -80,11 +80,20 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "add-purchase",
   mounted: function mounted() {
-    this.getDate();
+    this.getData();
   },
   components: {
     'v-select': vue_select__WEBPACK_IMPORTED_MODULE_0___default.a
@@ -92,6 +101,8 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       customers: [],
+      projects: [],
+      project: "",
       apartments: [],
       form: {
         finished: 0,
@@ -116,13 +127,13 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   methods: {
-    getDate: function getDate() {
+    getData: function getData() {
       var _this = this;
 
       this.$store.dispatch('purchase/getCreate', '').then(function (response) {
         _this.is_requesting = false;
         _this.customers = response.data.data.customers.data;
-        _this.apartments = response.data.data.apartments.data;
+        _this.projects = response.data.data.projects.data;
       }).catch(function (error) {
         console.log(error);
         _this.is_requesting = false;
@@ -138,8 +149,33 @@ __webpack_require__.r(__webpack_exports__);
         });
       });
     },
-    create: function create() {
+    getApartment: function getApartment() {
       var _this2 = this;
+
+      var payload = '';
+
+      if (this.project) {
+        payload = "?project_id=".concat(this.project.id);
+      }
+
+      this.$store.dispatch('apartment/getData', payload).then(function (response) {
+        _this2.is_requesting = false;
+        _this2.apartments = response.data.data.data;
+      }).catch(function (error) {
+        console.log(error);
+        _this2.is_requesting = false;
+
+        _this2.$vs.notify({
+          title: 'Error',
+          text: error.response.data.errors[Object.keys(error.response.data.errors)[0]][0],
+          iconPack: 'feather',
+          icon: 'icon-alert-circle',
+          color: 'danger'
+        });
+      });
+    },
+    create: function create() {
+      var _this3 = this;
 
       this.is_requesting = true;
       this.$vs.loading({
@@ -151,13 +187,13 @@ __webpack_require__.r(__webpack_exports__);
       this.form['customer_id'] = this.form['customer_id'].id;
       console.log(this.form.installments);
       this.$store.dispatch('purchase/create', this.form).then(function (response) {
-        _this2.is_requesting = false;
+        _this3.is_requesting = false;
 
-        _this2.$vs.loading.close("#btn-create > .con-vs-loading");
+        _this3.$vs.loading.close("#btn-create > .con-vs-loading");
 
-        _this2.$router.push("/dashboard/purchase/".concat(response.data.data.data.id));
+        _this3.$router.push("/dashboard/purchase/".concat(response.data.data.data.id));
 
-        _this2.$vs.notify({
+        _this3.$vs.notify({
           title: 'Success',
           text: response.data.message,
           iconPack: 'feather',
@@ -166,11 +202,11 @@ __webpack_require__.r(__webpack_exports__);
         });
       }).catch(function (error) {
         console.log(error);
-        _this2.is_requesting = false;
+        _this3.is_requesting = false;
 
-        _this2.$vs.loading.close("#btn-create > .con-vs-loading");
+        _this3.$vs.loading.close("#btn-create > .con-vs-loading");
 
-        _this2.$vs.notify({
+        _this3.$vs.notify({
           title: 'Error',
           text: error.response.data.errors[Object.keys(error.response.data.errors)[0]][0],
           iconPack: 'feather',
@@ -301,32 +337,60 @@ var render = function() {
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "vx-row" }, [
-                  _c(
-                    "div",
-                    { staticClass: "vx-col sm:w-1/2 w-full mb-6" },
-                    [
-                      _c("vs-input", {
-                        attrs: {
-                          type: "checkbox",
-                          name: "finished",
-                          danger: _vm.errors.has("finished"),
-                          "val-icon-danger": "clear",
-                          "danger-text": _vm.errors.first("finished"),
-                          "icon-pack": "feather",
-                          icon: "icon-check",
-                          "label-placeholder": "Finished"
-                        },
-                        model: {
+                  _c("div", { staticClass: "vx-col sm:w-1/2 w-full mb-6" }, [
+                    _c("label", { attrs: { for: "finished" } }, [
+                      _vm._v("Finished")
+                    ]),
+                    _vm._v(" "),
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
                           value: _vm.form.finished,
-                          callback: function($$v) {
-                            _vm.$set(_vm.form, "finished", $$v)
-                          },
                           expression: "form.finished"
                         }
-                      })
-                    ],
-                    1
-                  )
+                      ],
+                      attrs: {
+                        type: "checkbox",
+                        id: "finished",
+                        name: "finished"
+                      },
+                      domProps: {
+                        checked: Array.isArray(_vm.form.finished)
+                          ? _vm._i(_vm.form.finished, null) > -1
+                          : _vm.form.finished
+                      },
+                      on: {
+                        change: function($event) {
+                          var $$a = _vm.form.finished,
+                            $$el = $event.target,
+                            $$c = $$el.checked ? true : false
+                          if (Array.isArray($$a)) {
+                            var $$v = null,
+                              $$i = _vm._i($$a, $$v)
+                            if ($$el.checked) {
+                              $$i < 0 &&
+                                _vm.$set(
+                                  _vm.form,
+                                  "finished",
+                                  $$a.concat([$$v])
+                                )
+                            } else {
+                              $$i > -1 &&
+                                _vm.$set(
+                                  _vm.form,
+                                  "finished",
+                                  $$a.slice(0, $$i).concat($$a.slice($$i + 1))
+                                )
+                            }
+                          } else {
+                            _vm.$set(_vm.form, "finished", $$c)
+                          }
+                        }
+                      }
+                    })
+                  ])
                 ]),
                 _vm._v(" "),
                 !_vm.customer
@@ -356,6 +420,65 @@ var render = function() {
                   : _vm._e(),
                 _vm._v(" "),
                 !_vm.apartment
+                  ? _c(
+                      "div",
+                      { staticClass: "vx-row" },
+                      [
+                        _c(
+                          "div",
+                          { staticClass: "vx-col sm:w-1/2 mb-6" },
+                          [
+                            _c("v-select", {
+                              attrs: {
+                                label: "name",
+                                placeholder: "Project",
+                                options: _vm.projects,
+                                dir: _vm.$vs.rtl ? "rtl" : "ltr"
+                              },
+                              model: {
+                                value: _vm.project,
+                                callback: function($$v) {
+                                  _vm.project = $$v
+                                },
+                                expression: "project"
+                              }
+                            })
+                          ],
+                          1
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "vs-col",
+                          {
+                            attrs: {
+                              "vs-type": "flex",
+                              "vs-justify": "center",
+                              "vs-align": "center",
+                              "vs-w": "6"
+                            }
+                          },
+                          [
+                            _c(
+                              "vs-button",
+                              {
+                                attrs: {
+                                  id: "btn-filter",
+                                  "icon-pack": "feather",
+                                  type: "gradient"
+                                },
+                                on: { click: _vm.getApartment }
+                              },
+                              [_vm._v("Filter")]
+                            )
+                          ],
+                          1
+                        )
+                      ],
+                      1
+                    )
+                  : _vm._e(),
+                _vm._v(" "),
+                !_vm.apartment
                   ? _c("div", { staticClass: "vx-row" }, [
                       _c(
                         "div",
@@ -364,6 +487,7 @@ var render = function() {
                           _c("v-select", {
                             attrs: {
                               label: "number",
+                              placeholder: "Apartment",
                               options: _vm.apartments,
                               dir: _vm.$vs.rtl ? "rtl" : "ltr"
                             },

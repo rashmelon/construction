@@ -11,8 +11,8 @@
 
                 <div class="vx-row">
                     <div class="vx-col sm:w-1/2 w-full mb-6">
-                        <vs-input type="checkbox" name="finished" :danger="errors.has('finished')" val-icon-danger="clear" :danger-text="errors.first('finished')"
-                                  icon-pack="feather" icon="icon-check" label-placeholder="Finished" v-model="form.finished" />
+                        <label for="finished">Finished</label>
+                        <input type="checkbox" id="finished" name="finished" v-model="form.finished" />
                     </div>
                 </div>
 
@@ -23,8 +23,17 @@
                 </div>
 
                 <div class="vx-row" v-if="!apartment">
+                    <div class="vx-col sm:w-1/2 mb-6">
+                        <v-select v-model="project" label="name" placeholder="Project" :options="projects" :dir="$vs.rtl ? 'rtl' : 'ltr'"/>
+                    </div>
+                    <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="6">
+                        <vs-button id="btn-filter" @click="getApartment" icon-pack="feather" type="gradient">Filter</vs-button>
+                    </vs-col>
+                </div>
+
+                <div class="vx-row" v-if="!apartment">
                     <div class="vx-col sm:w-1/2 w-full mb-6">
-                        <v-select v-model="form.apartment_id" label="number" :options="apartments" :dir="$vs.rtl ? 'rtl' : 'ltr'"/>
+                        <v-select v-model="form.apartment_id" label="number" placeholder="Apartment" :options="apartments" :dir="$vs.rtl ? 'rtl' : 'ltr'"/>
                     </div>
                 </div>
 
@@ -72,7 +81,7 @@
     export default {
         name: "add-purchase",
         mounted() {
-          this.getDate();
+          this.getData();
         },
         components: {
             'v-select': vSelect,
@@ -80,6 +89,8 @@
         data: function () {
             return {
                 customers: [],
+                projects: [],
+                project: "",
                 apartments: [],
                 form: {
                     finished: 0,
@@ -104,17 +115,39 @@
             },
         },
         methods: {
-            getDate(){
+            getData(){
                 this.$store.dispatch('purchase/getCreate', '')
                     .then(response => {
                         this.is_requesting=false;
                         this.customers = response.data.data.customers.data;
-                        this.apartments = response.data.data.apartments.data;
+                        this.projects = response.data.data.projects.data;
                     })
                     .catch(error => {
                         console.log(error);
                         this.is_requesting=false;
                         this.$vs.loading.close(`#btn-create > .con-vs-loading`);
+                        this.$vs.notify({
+                            title: 'Error',
+                            text: error.response.data.errors[Object.keys(error.response.data.errors)[0]][0],
+                            iconPack: 'feather',
+                            icon: 'icon-alert-circle',
+                            color: 'danger'
+                        });
+                    });
+            },
+            getApartment(){
+                let payload = '';
+                if (this.project){
+                    payload = `?project_id=${this.project.id}`;
+                }
+                this.$store.dispatch('apartment/getData', payload)
+                    .then(response => {
+                        this.is_requesting=false;
+                        this.apartments = response.data.data.data;
+                    })
+                    .catch(error => {
+                        console.log(error);
+                        this.is_requesting=false;
                         this.$vs.notify({
                             title: 'Error',
                             text: error.response.data.errors[Object.keys(error.response.data.errors)[0]][0],

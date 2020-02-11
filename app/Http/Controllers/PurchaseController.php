@@ -7,10 +7,12 @@ use App\Customer;
 use App\Http\Requests\PurchaseRequest;
 use App\IndexResponse;
 use App\Installment;
+use App\Project;
 use App\Purchase;
 use App\Responses\Facades\ResponseFacade;
 use App\Transformers\ApartmentTransformer;
 use App\Transformers\CustomerTransformer;
+use App\Transformers\ProjectTransformer;
 use App\Transformers\PurchaseTransformer;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Http\JsonResponse;
@@ -46,7 +48,7 @@ class PurchaseController extends Controller
             'data fetched successfully',
             [
                 'customers' => fractal((Customer::all()), new CustomerTransformer()),
-                'apartments' => fractal((Apartment::all()), new ApartmentTransformer()),
+                'projects' => fractal((Project::all()), new ProjectTransformer()),
             ]
         );
     }
